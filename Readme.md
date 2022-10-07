@@ -1,0 +1,1 @@
+Dont edit css file directly instead compile style.scss

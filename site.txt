@@ -1,0 +1,38 @@
+Features
+booking vans
+online payment
+
+Hosting
+ - Netlify - free
+
+CMS?
+Language?
+ - React + NextJs
+	. has caching
+	. server + client in one
+DB - will be needed to keep vans schedule and customer info
+ - keeping customer info for future use?
+
+Payment
+Paypal 1.90% + fixed fee
+MyPos 1.30% + 0.20lv
+
+
+Sections
+Homepage
+ - booking form/button should be on focus
+ - how does pick up happen, certain spots in certain cities or custom?
+ - about us
+ - about our vans?
+	. what do our vans have
+	. cost per night
+
+ - camp spots reccomended by us?
+
+ - what we have that others don't
+ - what can you do with our vans?
+
+BookingPage
+ - Van and date preselected
+ - changing date should initiate a new search for available vans
+ - additional costs/options: pets, forks?, insurance, camping table/chair, bike rack, child seat

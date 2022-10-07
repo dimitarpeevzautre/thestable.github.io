@@ -1,0 +1,184 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #1F1A17;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+    // letter-spacing: 1px;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+nav {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    color: white;
+    align-items: center;
+    display: flex;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+
+    img {
+        margin-right: 50px;
+        height: 100%;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .logo-nav {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links {
+        padding-right: 50px;
+
+        a {
+            text-decoration: none;
+            padding: 0 10px;
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .nav-links {
+            display: none;
+        }
+    }
+}
+
+.landing-banner {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% 80%;
+    }
+}
+
+.container {
+    max-width: 1220px;
+    margin: auto;
+    padding: 100px 0;
+
+    @media (max-width: 900px) {
+        padding: 50px 20px;
+    }
+}
+
+.about-us {
+    .text-block {
+        text-align: center;
+        padding-bottom: 50px;
+
+        margin: auto;
+        width: 70%;
+
+        h2 {
+            padding-bottom: 30px;
+        }
+    }
+
+
+    .options {
+        display: flex;
+        width: 100%;
+        list-style: none;
+        text-align: center;
+
+        li {
+            width: 33%;
+            box-sizing: border-box;
+            padding: 30px;
+
+            img {
+                width: 100%;
+                max-width: 400px;
+                padding-bottom: 20px;
+            }
+
+            h3 {
+                padding-bottom: 30px;
+            }
+        }
+    }
+
+    @media (max-width: 900px) {
+        .text-block {
+            width: 100%;
+        }
+
+        .options {
+            flex-wrap: wrap;
+
+            li {
+                width: 100%;
+                padding: 40px 0;
+            }
+
+            .list-container {
+                max-width: 400px;
+                margin: auto;
+            }
+        }
+    }
+}
+
+.our-pricing {
+    background-color: rgba(31, 26, 23, 0.5);
+    text-align: center;
+
+    h2 {
+        padding-bottom: 30px;
+    }
+
+    p {
+        padding-bottom: 10px;
+        
+        &:last-child {
+            padding-top: 20px;
+        }
+    }
+}
+
+.contact-us {
+    text-align: center;
+
+    h2 {
+        padding-bottom: 30px;
+    }
+}
