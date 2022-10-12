@@ -32,7 +32,7 @@ p {
 
 nav {
     z-index: 2;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -44,6 +44,8 @@ nav {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+    --bg-color: rgba(255, 255, 255, 0);
+    background-color: var(--bg-color);
 
     img {
         margin-right: 50px;
@@ -77,18 +79,6 @@ nav {
     }
 }
 
-.landing-banner {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-
-    img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        object-position: 50% 80%;
-    }
-}
 
 .container {
     max-width: 1220px;
@@ -97,6 +87,25 @@ nav {
 
     @media (max-width: 900px) {
         padding: 50px 20px;
+    }
+}
+
+main {
+    background-color: white;
+}
+
+.landing-banner {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: -1;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% 80%;
+        position: fixed;
     }
 }
 
