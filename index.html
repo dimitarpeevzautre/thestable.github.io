@@ -13,39 +13,42 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZJF48SWW2"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-4ZJF48SWW2');
+        gtag('config', 'G-4ZJF48SWW2');
     </script>
-    
+
     <!-- Meta Pixel Code -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '3294059284255269');
-      fbq('track', 'PageView');
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '3294059284255269');
+        fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=3294059284255269&ev=PageView&noscript=1"
-    /></noscript>
+            src="https://www.facebook.com/tr?id=3294059284255269&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
 </head>
 
 <body>
-    
+
     <!-- Messenger Chat Plugin Code -->
     <div id="fb-root"></div>
 
@@ -54,35 +57,36 @@
     </div>
 
     <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "100769502371298");
-      chatbox.setAttribute("attribution", "biz_inbox");
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "100769502371298");
+        chatbox.setAttribute("attribution", "biz_inbox");
     </script>
 
     <!-- Your SDK code -->
     <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v15.0'
-        });
-      };
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v15.0'
+            });
+        };
 
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     </script>
-    
+
     <nav>
         <div class="logo-nav">
             <img src="static/Logo.png" />
-            
+
         </div>
         <div class="nav-links">
+            <a href="#book-now">Book Now</a>
             <a href="#about-us">About Us</a>
             <a href="#our-pricing">Pricing</a>
             <a href="#contact-us">Contact Us</a>
@@ -194,6 +198,74 @@
             </div>
         </div>
 
+        <div id="book-now" class="book-now">
+            <div class="container booking-container">
+                <h2 class="book-now-title">
+                    Book a Van
+                </h2>
+                <div id="booking-step-1" class="booking-step-1 active">
+                    <input class="datepicker" type="text" name="datefilter" value=""
+                        placeholder="Choose a date and see what vans we have available" />
+                </div>
+
+                <div id="booking-step-2" class="booking-step-2">
+                    <ul class="van-list">
+                        <li class="van" data-name="santimento">
+                            <div class="van-image">
+                                <img src="static/HomepageBanner.JPG" alt="">
+                            </div>
+                            <div class="description">
+                                <h3 class="van-name">Santimento</h3>
+                                <p class="van-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+                                    magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
+                                    itaque excepturi ad maiores consequuntur vel expedita nulla!</p>
+                            </div>
+                        </li>
+                        <li class="van" data-name="erectino">
+                            <div class="van-image">
+                                <img src="static/HomepageBanner.JPG" alt="">
+                            </div>
+                            <div class="description">
+                                <h3 class="van-name">Erectinto</h3>
+                                <p class="van-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+                                    magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
+                                    itaque excepturi ad maiores consequuntur vel expedita nulla!</p>
+                            </div>
+                        </li>
+                        <li class="van" data-name="ivan">
+                            <div class="van-image">
+                                <img src="static/HomepageBanner.JPG" alt="">
+                            </div>
+                            <div class="description">
+                                <h3 class="van-name">Ivan</h3>
+                                <p class="van-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+                                    magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
+                                    itaque excepturi ad maiores consequuntur vel expedita nulla!</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="booking-step-3" class="booking-step-3">
+                    <p>Fill in your email so we can contact you after</p>
+
+                    <form class="booking-form" action="/" method="post">
+                        <input type="email" name="email" id="email" placeholder="Email" required>
+                        <input type="text" name="phone" id="phone" placeholder="Phone number">
+                        <input type="text" name="van-input" id="van-input" hidden>
+                        <input type="text" name="date-input" id="date-input" hidden>
+                        <button type="submit" value="">
+                            book now
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="booking-confirmation">
+                <h2>Thanks for booking bitch!</h2>
+            </div>
+        </div>
+
         <div id="contact-us" class="contact-us">
             <div class="container">
                 <h2>Contact Us</h2>
@@ -203,6 +275,9 @@
         </div>
     </main>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script src="static/client/gsap/index.js"></script>
