@@ -86,10 +86,10 @@ async function initSecondBookingStep(startDate, endDate) {
 
     $('.van').on('click', (e) => {
         let $target = $(e.target);
-        let vanName = $target.attr('data-name');
+        let vanName = $target.data('name');
 
         if (!vanName) {
-            $target.parents('.van').attr('data-name')
+            vanName = $target.parents('.van').data('name');
         }
 
         let dateRange = $('#booking-step-1 .datepicker').val();
@@ -114,11 +114,43 @@ function initThirdBookingStep(vanName, dateRange) {
         $('.booking-step-3').addClass('active');
     }
 
+    $('#email-radio, #phone-radio').on('change', (e) => {
+        if($(e.target).attr('id').indexOf('email') != -1) {
+            $('#email').addClass('active')     
+            $('#phone').removeClass('active')     
+        } else {
+            $('#email').removeClass('active')     
+            $('#phone').addClass('active')     
+        }
+    })
+
     $('#booking-step-3 .booking-form').on('submit', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        $('.booking-container').css('max-height', '0');
+
+        $('.booking-container').removeClass('active');
         $('.booking-confirmation').addClass('active');
+
+        let request = {
+            email: $('#email').val(),
+            phone: $('#phone').val(),
+            van: vanName,
+            dateRange: dateRange
+        }
+
+        $.ajax({
+            url: 'https://eoup9yw6a36n9ny.m.pipedream.net',
+            method: 'POST',
+            data: request,
+            success: (data) => {
+                console.log('success')
+
+            },
+            error: (data) => {
+                console.log('error')
+
+            }
+        })
     })
 }
 

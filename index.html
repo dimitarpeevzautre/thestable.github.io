@@ -14,7 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/styles/style.css">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZJF48SWW2"></script>
@@ -31,7 +31,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -86,183 +86,249 @@
 
         </div>
         <div class="nav-links">
-            <a href="#book-now">Book Now</a>
+            <a class="book-now-btn" href="#book-now">Book Now</a>
             <a href="#about-us">About Us</a>
             <a href="#our-pricing">Pricing</a>
             <a href="#contact-us">Contact Us</a>
         </div>
     </nav>
-    <div class="landing-banner"><img src="static/HomepageBanner.JPG" alt=""></div>
+    <div class="landing-banner">
+        <div class="landing-text-wrapper">
+            <div class="landing-text">
+                <p>Campervans for rent</p>
+                <h1><span>the</span> Stable</h1>
+                <a class="landing-book-now btn" href="#book-now">Book now</a>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <img src="static/HomepageBanner.JPG" alt="">
+        </div>
+    </div>
     <div class="navigation-anim-trigger"></div>
     <main>
-        <div id="about-us" class="container about-us">
-            <div class="text-block">
-                <h2>
-                    Our Campers
-                </h2>
-                <p>
-                    Our campers are fully equipped for your adventure. They are easy to drive, fast and capable brand
-                    new 4x4 machines. You can comfortably drive and sleep 4 people in the campervans. The VW California
-                    line has been iconic for almost 60 years, and that's why we think it is the best choice to enjoy our
-                    beautiful Bulgarian lakes, mountains and beaches.
-                </p>
+        <div id="about-us" class="about-us">
+            <div class="container">
+                <div class="text-block">
+                    <h2>About our campers</h2>
+                    <p>
+                        Our campers are fully equipped for your adventure. They are easy to drive, fast and capable
+                        brand
+                        new 4x4 machines. You can comfortably drive and sleep 4 people in the campervans. The VW
+                        California
+                        line has been iconic for almost 60 years, and that's why we think it is the best choice to enjoy
+                        our
+                        beautiful Bulgarian lakes, mountains and beaches.
+                    </p>
+                </div>
+                <ul class="card-list">
+                    <li>
+                        <div class="card-container">
+                            <div class="card-image">
+                                <img src="static/miles.jpg" alt="">
+                            </div>
+                            <div class="card-text">
+                                <h3>Unlimited Miles</h3>
+                                <p>
+                                    Miles and smiles sounds nice. So our campers are not limited in range or countries
+                                    you
+                                    can
+                                    visit. Think about the adventure ahead and we will take care that you are well
+                                    prepared
+                                    to
+                                    enjoy it to the maximum. If requested we can suggest good campings along your route
+                                    or
+                                    scenic places you should visit and camp.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="card-container">
+                            <div class="card-image">
+                                <img src="static/cutlery.jpg" alt="">
+                            </div>
+                            <div class="card-text">
+                                <h3>Provided Cutlery</h3>
+                                <p>
+                                    We have selected the finest cutlery from Victorinox and Stanley.
+                                </p>
+                                <p>
+                                    Stanley full kitchen base: 18/8 Stainless Steel pot (3.5 L), Vented lid, 3-ply
+                                    frying pan,
+                                    Cutting board, Spatula with extending handle, Serving spoon with extending handle, 4
+                                    Plates
+                                    (15.2 cm diameter), 4 Bowls (.65 L), 4 Sporks, Dish drying rack, Trivet, Locking
+                                    bunge
+                                </p>
+                                <p>
+                                    Victorinox set: 4 forks, 4 spoons, 1 kitchen knife, peeler, 1 swiss army knife,
+                                    cutting board
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="card-container">
+                            <div class="card-image">
+                                <img src="static/bedding.png" alt="">
+                            </div>
+                            <div class="card-text">
+                                <h3>Provided Bedding</h3>
+                                <p>
+                                    We have equipped our campers with high quality bedding for 4 which includes:
+
+                                    2 double down sheets
+
+                                    2 double cover sheets
+
+                                    4 pillows
+
+                                    The campers are also equipped with an inside table for dining indoors, water, gas
+                                    stove
+                                    and
+                                    a big fridge. There are 2 folding chairs and an additional folding table for
+                                    outside,
+                                    neatly
+                                    hidden in the vehicles' doors.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <ul class="options">
-                <li>
-                    <div class="list-container">
-                        <img src="static/cutlery.png" alt="">
-                        <div>
-                            <h3>Cutlery</h3>
-                            <p>
-                                We have selected the finest cutlery from Victorinox and Stanley. There is a full set for
-                                you
-                                containing:
-                                Stanley full kitchen base: 18/8 Stainless Steel pot (3.5 L), Vented lid, 3-ply frying
-                                pan,
-                                Cutting board, Spatula with extending handle, Serving spoon with extending handle, 4
-                                Plates
-                                (15.2 cm diameter), 4 Bowls (.65 L), 4 Sporks, Dish drying rack, Trivet, Locking bunge
-                                Victorinox set: 4 forks, 4 spoons, 1 kitchen knife, peeler, 1 swiss army knife, cutting
-                                board
-                            </p>
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="list-container">
-                        <img src="static/miles.jpg" alt="">
-                        <div>
-                            <h3>Miles</h3>
-                            <p>
-                                Miles and smiles sounds nice. So our campers are not limited in range or countries you
-                                can
-                                visit. Think about the adventure ahead and we will take care that you are well prepared
-                                to
-                                enjoy it to the maximum. If requested we can suggest good campings along your route or
-                                scenic places you should visit and camp.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="list-container">
-                        <img src="static/bedding.png" alt="">
-                        <div>
-                            <h3>Bedding</h3>
-                            <p>
-                                We have equipped our campers with high quality bedding for 4 which includes:
-
-                                2 double down sheets
-
-                                2 double cover sheets
-
-                                4 pillows
-
-                                The campers are also equipped with an inside table for dining indoors, water, gas stove
-                                and
-                                a big fridge. There are 2 folding chairs and an additional folding table for outside,
-                                neatly
-                                hidden in the vehicles' doors.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
         </div>
 
         <div id="our-pricing" class="our-pricing">
             <div class="container">
-                <h2>
-                    Our Pricing
-                </h2>
+                <div class="pricing-body">
+                    <div class="pricing-title">
+                        <h2>
+                            Simple Pricing
+                        </h2>
+                        <p>
+                            We drive the camper to you sparkling clean and ready for a journey. Just think about the
+                            adventure.
+                        </p>
+                    </div>
 
-                <p>
-                    <b>
-                        Pick up:
-                    </b>
-                    100 EUR
-                </p>
+                    <div class="pricing-table">
+                        <span>
+                            <span class="price-label">
+                                pick up:
+                            </span>
+                            100 EUR
+                        </span>
 
-                <p>
-                    <b>
-                        Per day:
-                    </b>
-                    140 EUR
-                </p>
-
-                <p>
-                    We drive the camper to you sparkling clean and ready for a journey. Just think about the adventure.
-                </p>
+                        <span>
+                            <span class="price-label">
+                                per day:
+                            </span>
+                            140 EUR
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div id="book-now" class="book-now">
-            <div class="container booking-container">
-                <h2 class="book-now-title">
-                    Book a Van
-                </h2>
-                <div id="booking-step-1" class="booking-step-1 active">
-                    <input class="datepicker" type="text" name="datefilter" value=""
-                        placeholder="Choose a date and see what vans we have available" />
+            <div class="container">
+                <div class="booking-container active">
+
+                    <h2 class="book-now-title">
+                        Book a Van
+                    </h2>
+                    <div id="booking-step-1" class="booking-step-1 active">
+                        <label class="step-instructions" for="datepicker">Complete the simple 3 step booking process so
+                            you
+                            can take one of our campervans out on an adventure</label>
+                        <input id="datepicker" class="datepicker" type="text" name="datefilter" value=""
+                            placeholder="Choose a date and see what vans we have available" />
+                    </div>
+
+                    <div id="booking-step-2" class="booking-step-2">
+                        <p class="step-instructions">Choose which one of our vans to book. Our vans have no functional
+                            difference, only visual.</p>
+                        <ul class="van-list">
+                            <li class="van" data-name="roscinante">
+                                <div class="van-image">
+                                    <img src="static/HomepageBanner.JPG" alt="">
+                                </div>
+                                <div class="description">
+                                    <h3 class="van-name">Roscinante</h3>
+                                    <p class="van-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        In,
+                                        magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
+                                        itaque excepturi ad maiores consequuntur vel expedita nulla!</p>
+                                </div>
+                            </li>
+                            <li class="van" data-name="alfonso">
+                                <div class="van-image">
+                                    <img src="static/HomepageBanner.JPG" alt="">
+                                </div>
+                                <div class="description">
+                                    <h3 class="van-name">Alfonso</h3>
+                                    <p class="van-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        In,
+                                        magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
+                                        magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
+                                        magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
+                                        magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
+                                        magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
+                                        magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
+                                        itaque excepturi ad maiores consequuntur vel expedita nulla!</p>
+                                </div>
+                            </li>
+                            <li class="van" data-name="bucephalus">
+                                <div class="van-image">
+                                    <img src="static/HomepageBanner.JPG" alt="">
+                                </div>
+                                <div class="description">
+                                    <h3 class="van-name">Bucephalus</h3>
+                                    <p class="van-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        In,
+                                        magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
+                                        itaque excepturi ad maiores consequuntur vel expedita nulla!</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="booking-step-3" class="booking-step-3">
+                        <p class="step-instructions">Fill in your email so we can contact you after completing the form
+                            and
+                            confirm your booking</p>
+
+                        <form class="booking-form" action="/" method="post">
+                            <div class="booking-form-radio">
+                                <p>Choose in which form do you want us to contact you.</p>
+                                <div class="radio-wrapper">
+                                    <input type="radio" name="contact-type" id="email-radio">
+                                    <label for="email-radio">Email</label>
+                                </div>
+                                <div class="radio-wrapper">
+                                    <input type="radio" name="contact-type" id="phone-radio">
+                                    <label for="phone-radio">Phone</label>
+                                </div>
+                            </div>
+
+                            <input type="email" name="email" id="email" placeholder="Email">
+                            <input type="tel" name="phone" id="phone" placeholder="Phone number">
+
+                            <input type="text" name="van-input" id="van-input" hidden>
+                            <input type="text" name="date-input" id="date-input" hidden>
+                            <button type="submit" value="">
+                                book now
+                            </button>
+                        </form>
+                    </div>
+
                 </div>
-
-                <div id="booking-step-2" class="booking-step-2">
-                    <ul class="van-list">
-                        <li class="van" data-name="roscinante">
-                            <div class="van-image">
-                                <img src="static/HomepageBanner.JPG" alt="">
-                            </div>
-                            <div class="description">
-                                <h3 class="van-name">Roscinante</h3>
-                                <p class="van-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
-                                    magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
-                                    itaque excepturi ad maiores consequuntur vel expedita nulla!</p>
-                            </div>
-                        </li>
-                        <li class="van" data-name="alfonso">
-                            <div class="van-image">
-                                <img src="static/HomepageBanner.JPG" alt="">
-                            </div>
-                            <div class="description">
-                                <h3 class="van-name">Alfonso</h3>
-                                <p class="van-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
-                                    magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
-                                    itaque excepturi ad maiores consequuntur vel expedita nulla!</p>
-                            </div>
-                        </li>
-                        <li class="van" data-name="bucephalus">
-                            <div class="van-image">
-                                <img src="static/HomepageBanner.JPG" alt="">
-                            </div>
-                            <div class="description">
-                                <h3 class="van-name">Bucephalus</h3>
-                                <p class="van-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
-                                    magnam sint? Sunt ab tempora ratione hic et incidunt! Ratione eaque facere hic
-                                    itaque excepturi ad maiores consequuntur vel expedita nulla!</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div id="booking-step-3" class="booking-step-3">
-                    <p>Fill in your email so we can contact you after</p>
-
-                    <form class="booking-form" action="/" method="post">
-                        <input type="email" name="email" id="email" placeholder="Email" required>
-                        <input type="text" name="phone" id="phone" placeholder="Phone number">
-                        <input type="text" name="van-input" id="van-input" hidden>
-                        <input type="text" name="date-input" id="date-input" hidden>
-                        <button type="submit" value="">
-                            book now
-                        </button>
-                    </form>
-                </div>
-
             </div>
             <div class="booking-confirmation">
-                <h2>Thanks for booking bitch!</h2>
+                <h4>Thanks for booking one of our vans, we will contact you shortly!</h4>
+                <img src="static/Logo.png" alt="logo with a horse merging with the letters">
             </div>
         </div>
 
