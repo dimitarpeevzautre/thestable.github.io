@@ -451,21 +451,21 @@ nav {
             text-align: right;
 
             .price-label {
-                font-size: 24px;
-                font-family: $text-font;
-            }
-
-            &>span:nth-child(2) {
-                padding-left: 60px;
-            }
-
-            span {
-                font-size: 32px;
-                font-family: $title-font;
                 white-space: nowrap;
 
-                >span {
+                span:first-child {
+                    font-size: 24px;
+                    font-family: $text-font;
                     padding-right: 5px;
+                }
+
+                span:nth-child(2) {
+                    font-size: 32px;
+                    font-family: $title-font;
+                }
+
+                &:nth-child(2) {
+                    padding-left: 60px;
                 }
             }
         }
@@ -492,21 +492,22 @@ nav {
                 justify-content: space-between;
                 text-align: left;
 
-                &>span:nth-child(2) {
-                    padding-left: 0;
-                }
+               
 
                 .price-label {
-                    font-size: 18px;
-                }
-
-                span {
-                    display: flex;
-                    flex-direction: column;
-                    font-size: 30px;
-
-                    >span {
+                    span:first-child {
+                        font-size: 18px;
                         padding-right: 5px;
+                    }
+
+                    span:nth-child(2) {
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 30px;    
+                    }
+
+                    &:nth-child(2) {
+                        padding-left: 0;
                     }
                 }
             }
@@ -765,5 +766,9 @@ nav {
 
     h2 {
         padding-bottom: 30px;
+    }
+
+    .contacts-label {
+        white-space: nowrap;
     }
 }

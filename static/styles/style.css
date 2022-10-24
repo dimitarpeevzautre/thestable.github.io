@@ -386,19 +386,19 @@ nav .nav-links .book-now-btn {
   text-align: right;
 }
 .our-pricing .pricing-body .pricing-table .price-label {
-  font-size: 24px;
-  font-family: "Roboto", sans-serif;
-}
-.our-pricing .pricing-body .pricing-table > span:nth-child(2) {
-  padding-left: 60px;
-}
-.our-pricing .pricing-body .pricing-table span {
-  font-size: 32px;
-  font-family: "Montserrat", sans-serif;
   white-space: nowrap;
 }
-.our-pricing .pricing-body .pricing-table span > span {
+.our-pricing .pricing-body .pricing-table .price-label span:first-child {
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
   padding-right: 5px;
+}
+.our-pricing .pricing-body .pricing-table .price-label span:nth-child(2) {
+  font-size: 32px;
+  font-family: "Montserrat", sans-serif;
+}
+.our-pricing .pricing-body .pricing-table .price-label:nth-child(2) {
+  padding-left: 60px;
 }
 @media (max-width: 900px) {
   .our-pricing .container {
@@ -418,19 +418,17 @@ nav .nav-links .book-now-btn {
     justify-content: space-between;
     text-align: left;
   }
-  .our-pricing .pricing-body .pricing-table > span:nth-child(2) {
-    padding-left: 0;
-  }
-  .our-pricing .pricing-body .pricing-table .price-label {
+  .our-pricing .pricing-body .pricing-table .price-label span:first-child {
     font-size: 18px;
+    padding-right: 5px;
   }
-  .our-pricing .pricing-body .pricing-table span {
+  .our-pricing .pricing-body .pricing-table .price-label span:nth-child(2) {
     display: flex;
     flex-direction: column;
     font-size: 30px;
   }
-  .our-pricing .pricing-body .pricing-table span > span {
-    padding-right: 5px;
+  .our-pricing .pricing-body .pricing-table .price-label:nth-child(2) {
+    padding-left: 0;
   }
 }
 
@@ -650,6 +648,9 @@ nav .nav-links .book-now-btn {
 }
 .contact-us h2 {
   padding-bottom: 30px;
+}
+.contact-us .contacts-label {
+  white-space: nowrap;
 }
 
 /*# sourceMappingURL=style.css.map */
