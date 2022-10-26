@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="static/styles/style.css">
@@ -181,7 +181,15 @@
                 <div class="pricing-body">
                     <div class="pricing-title">
                         <h2 data-i18n="pricing.title"></h2>
-                        <p data-i18n="pricing.body"></p>
+                        <p data-i18n="pricing.body1"></p>
+                        <p>
+                            <!-- Couldn't figure out interpolation, always escapes <span> -->
+                            <span data-i18n="pricing.body2.1"></span>
+                            <span class="bold">100 EUR</span>
+                            <span data-i18n="pricing.body2.2"></span>
+                            <span class="bold">140 EUR</span>
+                            <span data-i18n="pricing.body2.3"></span>
+                        </p>
                     </div>
 
                     <div class="pricing-table">
