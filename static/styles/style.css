@@ -14,7 +14,7 @@ h6 {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 64px;
 }
 
 h3 {
@@ -79,6 +79,10 @@ button:after,
   left: 0;
   background-color: red;
   z-index: 100;
+}
+
+.bold {
+  font-weight: 900;
 }
 
 html {
@@ -363,72 +367,44 @@ nav .nav-links .book-now-btn {
   background-color: #ffa01c;
   color: #FFFFFF;
 }
-.our-pricing .container {
-  padding-top: 0;
-  padding-bottom: 0;
-  height: 30vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.our-pricing .pricing-body {
-  display: flex;
-  justify-content: space-between;
-}
 .our-pricing .pricing-body h2 {
-  padding: 0;
+  padding: 0 0 20px;
 }
 .our-pricing .pricing-body .pricing-title {
   padding-right: 50px;
 }
+.our-pricing .pricing-body .pricing-title p {
+  padding-top: 40px;
+}
+.our-pricing .pricing-body .pricing-title p:nth-child(2) {
+  font-weight: 600;
+}
 .our-pricing .pricing-body .pricing-table {
-  padding-top: 5px;
-  text-align: right;
+  padding-top: 75px;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
 }
 .our-pricing .pricing-body .pricing-table .price-label {
   white-space: nowrap;
 }
+.our-pricing .pricing-body .pricing-table .price-label span {
+  display: block;
+}
 .our-pricing .pricing-body .pricing-table .price-label span:first-child {
-  font-size: 24px;
+  font-size: 18px;
   font-family: "Roboto", sans-serif;
-  padding-right: 5px;
 }
 .our-pricing .pricing-body .pricing-table .price-label span:nth-child(2) {
   font-size: 32px;
   font-family: "Montserrat", sans-serif;
 }
-.our-pricing .pricing-body .pricing-table .price-label:nth-child(2) {
-  padding-left: 60px;
-}
 @media (max-width: 900px) {
   .our-pricing .container {
     padding: 50px 20px;
   }
-  .our-pricing .pricing-body {
-    display: block;
-  }
-  .our-pricing .pricing-body .pricing-title {
-    padding-bottom: 60px;
-  }
-  .our-pricing .pricing-body .pricing-title h2 {
-    padding-bottom: 30px;
-  }
   .our-pricing .pricing-body .pricing-table {
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-  }
-  .our-pricing .pricing-body .pricing-table .price-label span:first-child {
-    font-size: 18px;
-    padding-right: 5px;
-  }
-  .our-pricing .pricing-body .pricing-table .price-label span:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-    font-size: 30px;
-  }
-  .our-pricing .pricing-body .pricing-table .price-label:nth-child(2) {
-    padding-left: 0;
+    width: 100%;
   }
 }
 

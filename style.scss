@@ -30,7 +30,7 @@ h6 {
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 64px;
 }
 
 h3 {
@@ -101,6 +101,10 @@ button,
         background-color: red;
         z-index: 100;
     }
+}
+
+.bold {
+    font-weight: 900;
 }
 
 html {
@@ -424,48 +428,44 @@ nav {
     background-color: #ffa01c;
     color: $white;
 
-    .container {
-        padding-top: 0;
-        padding-bottom: 0;
-        height: 30vh;
-        display: flex;
-        flex-direction: column;
-        // align-items: center;
-        justify-content: center;
-    }
-
     .pricing-body {
-        display: flex;
-        justify-content: space-between;
-
         h2 {
-            padding: 0;
+            padding: 0 0 20px;
         }
 
         .pricing-title {
             padding-right: 50px;
+
+            p {
+                padding-top: 40px;
+
+                &:nth-child(2) {
+                    font-weight: 600;
+                }
+            }
         }
 
         .pricing-table {
-            padding-top: 5px;
-            text-align: right;
+            padding-top: 75px;
+            display: flex;
+            width: 50%;
+            justify-content: space-between;
 
             .price-label {
                 white-space: nowrap;
 
+                span {
+                    display: block;
+                }
+
                 span:first-child {
-                    font-size: 24px;
+                    font-size: 18px;
                     font-family: $text-font;
-                    padding-right: 5px;
                 }
 
                 span:nth-child(2) {
                     font-size: 32px;
                     font-family: $title-font;
-                }
-
-                &:nth-child(2) {
-                    padding-left: 60px;
                 }
             }
         }
@@ -477,39 +477,8 @@ nav {
         }
 
         .pricing-body {
-            display: block;
-
-            .pricing-title {
-                padding-bottom: 60px;
-
-                h2 {
-                    padding-bottom: 30px;
-                }
-            }
-
             .pricing-table {
-                display: flex;
-                justify-content: space-between;
-                text-align: left;
-
-               
-
-                .price-label {
-                    span:first-child {
-                        font-size: 18px;
-                        padding-right: 5px;
-                    }
-
-                    span:nth-child(2) {
-                        display: flex;
-                        flex-direction: column;
-                        font-size: 30px;    
-                    }
-
-                    &:nth-child(2) {
-                        padding-left: 0;
-                    }
-                }
+                width: 100%;
             }
         }
     }

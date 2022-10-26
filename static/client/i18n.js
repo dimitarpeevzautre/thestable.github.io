@@ -46,13 +46,18 @@ $(function () {
                         },
                         pricing: {
                             title: 'Simple Pricing',
-                            body: 'We drive the camper to you sparkling clean and ready for a journey. Just think about the adventure.',
+                            body1: 'No price adjustables. No more advertising one price than doubling it with adjustables.',
+                            body2: {
+                                '1': 'We take an initial ',
+                                '2': 'for delivery and setup and ',
+                                '3': 'per day. We drive the camper to you sparkling clean and ready for a journey. Just think about the adventure.',
+                            },
                             pickup: {
-                                label: 'pick up:',
+                                label: 'Pick up',
                                 price: '100 EUR'
                             },
                             perday: {
-                                label: 'per day:',
+                                label: 'Per day',
                                 price: '140 EUR'
                             }
                         },
