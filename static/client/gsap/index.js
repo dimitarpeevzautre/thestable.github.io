@@ -12,8 +12,19 @@ function initAnimations() {
                 height: 90,
                 duration: 0.5,
                 "--bg-color": "rgba(255, 255, 255, 1)",
+                "--font-color": "rgba(0, 0, 0, 1)",
                 scrollTrigger: landingScrollTrigger
             })
+
+        gsap.to('.logo-nav',
+            {
+                height: 60,
+                width: 90,
+                duration: 0.5,
+                scrollTrigger: landingScrollTrigger
+            })
+
+
 
         // gsap.to('.book-now-btn',
         //     {
