@@ -30,11 +30,10 @@ function initBookingForm() {
     });
 }
 
-// todo write actual calIDs
 let vans = {
-    roscinante: 'c_87a464ad7365e9c770b8325b7d8fc7604ecaaa59e9a5e55b4a59fa2f99aedcbe@group.calendar.google.com',
-    alfonso: 'c_ac2c84e6fb497a217cd923b1431ce89a099db8a6522e45731e08edeccee7e3ab@group.calendar.google.com',
-    bucephalus: 'c_1637599e2a7e1a46106c3fe3bb1065ffe0fbe98d1f30d69452983ab790ac6eda@group.calendar.google.com'
+    roscinante: 'c_o5i24ulbm1psuek3guprv42q8g@group.calendar.google.com',
+    alfonso: 'c_7cf7cf9df16b5d8032e4e88060fce5b2da8c8bdf0821c66a5f61c74e2a62ae93@group.calendar.google.com',
+    bucephalus: 'c_71f7b3fba73e19c3ff433a5d987e59075679e0fc66ce26c5d7c1cf385baad74c@group.calendar.google.com'
 }
 
 /**
@@ -63,11 +62,9 @@ function showAvailableVans(startDate, endDate) {
                 if (data.items.length === 0) {
                     $('.van[data-name="' + data.summary.toLowerCase() + '"]').css('display', 'block')
                 }
-                console.log('Promise succ response: ')
                 console.log(data)
             })
             .catch((data) => {
-                console.log('Promise error for: ')
                 console.log(data)
             });
     })
@@ -94,7 +91,7 @@ async function initSecondBookingStep(startDate, endDate) {
 
         let dateRange = $('#booking-step-1 .datepicker').val();
 
-        initThirdBookingStep(vanName, dateRange)
+        initThirdBookingStep(vanName, dateRange, startDate, endDate)
     })
 }
 
@@ -102,7 +99,7 @@ function hideSecondBookingStep() {
     $('.booking-step-2').removeClass('active');
 }
 
-function initThirdBookingStep(vanName, dateRange) {
+function initThirdBookingStep(vanName, dateRange, startDate, endDate) {
     $('#van-input').val(vanName);
     $('#date-input').val(dateRange);
 
@@ -112,15 +109,20 @@ function initThirdBookingStep(vanName, dateRange) {
 
     if (!$('.booking-step-3').hasClass('active')) {
         $('.booking-step-3').addClass('active');
+
+        const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+        const diffDays = Math.round(Math.abs((startDate - endDate) / oneDay));
+
+        $('.calc-price').text((diffDays * 140 + 100))
     }
 
     $('#email-radio, #phone-radio').on('change', (e) => {
-        if($(e.target).attr('id').indexOf('email') != -1) {
-            $('#email').addClass('active')     
-            $('#phone').removeClass('active')     
+        if ($(e.target).attr('id').indexOf('email') != -1) {
+            $('#email').addClass('active')
+            $('#phone').removeClass('active')
         } else {
-            $('#email').removeClass('active')     
-            $('#phone').addClass('active')     
+            $('#email').removeClass('active')
+            $('#phone').addClass('active')
         }
     })
 
@@ -144,11 +146,9 @@ function initThirdBookingStep(vanName, dateRange) {
             data: request,
             success: (data) => {
                 console.log('success')
-
             },
             error: (data) => {
                 console.log('error')
-
             }
         })
     })
