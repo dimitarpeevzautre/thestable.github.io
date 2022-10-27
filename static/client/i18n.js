@@ -95,8 +95,8 @@ $(function () {
                             }
                         },
                         van: {
-                            roscinante: {
-                                name: 'Roscinante',
+                            rocinante: {
+                                name: 'Rocinante',
                                 description: "Our 4x4 adventure machine named after Don Quixote's stallion is convenient for up to 4 people. He has been to Spain!"
                             },
                             alfonso: {

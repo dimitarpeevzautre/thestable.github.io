@@ -1,5 +1,6 @@
 initAnimations();
 initBookingForm();
+navEvents();
 
 const googleApiKey = 'AIzaSyDEyI-WDW_xvepethIYS3XA11r73NgaVRc';
 
@@ -31,7 +32,7 @@ function initBookingForm() {
 }
 
 let vans = {
-    roscinante: 'c_o5i24ulbm1psuek3guprv42q8g@group.calendar.google.com',
+    rocinante: 'c_o5i24ulbm1psuek3guprv42q8g@group.calendar.google.com',
     alfonso: 'c_7cf7cf9df16b5d8032e4e88060fce5b2da8c8bdf0821c66a5f61c74e2a62ae93@group.calendar.google.com',
     bucephalus: 'c_71f7b3fba73e19c3ff433a5d987e59075679e0fc66ce26c5d7c1cf385baad74c@group.calendar.google.com'
 }
@@ -156,4 +157,25 @@ function initThirdBookingStep(vanName, dateRange, startDate, endDate) {
 
 function hideThirdBookingStep() {
     $('.booking-step-3').removeClass('active');
+}
+
+function navEvents() {
+    $('.nav-btn').on('click', (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        $('.nav-links-wrapper').addClass('active');
+        $('html').css({ 'overflow': 'hidden' });
+    })
+
+    $('.nav-back-btn').on('click', (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        $('.nav-links-wrapper').removeClass('active');
+        $('html').css({ 'overflow': 'initial' });
+    })
+
+    $('.nav-anchor, .book-now-btn').on('click', (e) => {
+        $('.nav-links-wrapper').removeClass('active');
+        $('html').css({ 'overflow': 'initial' });
+    })
 }
