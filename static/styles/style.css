@@ -92,7 +92,7 @@ html {
 }
 
 nav {
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   top: 0;
   left: 0;
@@ -201,6 +201,11 @@ nav .nav-links .book-now-btn {
   }
 }
 
+main {
+  position: relative;
+  z-index: 2;
+}
+
 .container {
   max-width: 1220px;
   margin: auto;
@@ -226,7 +231,6 @@ nav .nav-links .book-now-btn {
   height: 90vh;
   width: 100%;
   position: relative;
-  z-index: -1;
   background-color: #FFFFFF;
 }
 .landing-banner .image-wrapper {
