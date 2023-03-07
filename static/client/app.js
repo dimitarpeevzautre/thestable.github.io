@@ -62,6 +62,8 @@ function showAvailableVans(startDate, endDate) {
             .then((data) => {
                 if (data.items.length === 0) {
                     $('.van[data-name="' + data.summary.toLowerCase() + '"]').css('display', 'block')
+                } else {
+                    $('.van[data-name="' + data.summary.toLowerCase() + '"]').css('display', 'none')
                 }
                 console.log(data)
             })
