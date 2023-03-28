@@ -20,6 +20,11 @@ function initBookingForm() {
 
             initSecondBookingStep(picker.startDate, picker.endDate)
             hideThirdBookingStep();
+            
+            gtag('event', 'date_range_selected', {
+              'event_category': 'booking',
+              'event_label': picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY')
+            });
         });
 
         $('input[name="datefilter"]').on('cancel.daterangepicker', function (ev, picker) {
@@ -91,7 +96,12 @@ async function initSecondBookingStep(startDate, endDate) {
         if (!vanName) {
             vanName = $target.parents('.van').data('name');
         }
-
+        
+        gtag('event', 'van_selected', {
+          'event_category': 'booking',
+          'event_label': vanName
+        });
+        
         let dateRange = $('#booking-step-1 .datepicker').val();
 
         initThirdBookingStep(vanName, dateRange, startDate, endDate)
@@ -132,7 +142,13 @@ function initThirdBookingStep(vanName, dateRange, startDate, endDate) {
     $('#booking-step-3 .booking-form').on('submit', (e) => {
         e.preventDefault();
         e.stopPropagation();
-
+        
+        gtag('event', 'booking_form_completed', {
+          'event_category': 'booking',
+          'event_label': vanName,
+          'value': dateRange
+        });
+        
         $('.booking-container').removeClass('active');
         $('.booking-confirmation').addClass('active');
 
