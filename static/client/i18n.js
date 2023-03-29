@@ -92,6 +92,9 @@ $(function () {
                             email: {
                                 label: 'Email:',
                                 body: ' dimitar@thestable.bg'
+                            },
+                            social: {
+                                label: 'Follow us on social media:'
                             }
                         },
                         van: {
