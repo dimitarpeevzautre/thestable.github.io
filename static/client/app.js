@@ -142,7 +142,10 @@ function initThirdBookingStep(vanName, dateRange, startDate, endDate) {
     $('#booking-step-3 .booking-form').on('submit', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        
+        if ($('#email').val() === '' && $('#phone').val() === '') {
+            alert('Please provide either an email or a phone number.');
+            return;
+        }
         gtag('event', 'booking_form_completed', {
           'event_category': 'booking',
           'event_label': vanName,
