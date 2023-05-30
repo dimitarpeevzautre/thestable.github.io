@@ -54,7 +54,7 @@ $(function() {
 							},
 							pickup: {
 								label: 'Pick up',
-								price: '100 EUR'
+								price: '80 EUR'
 							},
 							perday: {
 								label: 'Per day',
@@ -155,7 +155,7 @@ $(function() {
 							},
 							pickup: {
 								label: 'Получаване',
-								price: '100 EUR'
+								price: '80 EUR'
 							},
 							perday: {
 								label: 'На ден',
