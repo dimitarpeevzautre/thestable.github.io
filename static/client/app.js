@@ -126,7 +126,7 @@ function initThirdBookingStep(vanName, dateRange, startDate, endDate) {
         const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
         const diffDays = Math.round(Math.abs((startDate - endDate) / oneDay));
 
-        $('.calc-price').text((diffDays * 140 + 100))
+        $('.calc-price').text((diffDays * 140 + 80))
     }
 
     $('#email-radio, #phone-radio').on('change', (e) => {
@@ -159,7 +159,9 @@ function initThirdBookingStep(vanName, dateRange, startDate, endDate) {
             email: $('#email').val(),
             phone: $('#phone').val(),
             van: vanName,
-            dateRange: dateRange
+            dateRange: dateRange,
+            priceShown: $('.calc-price').val(),
+            promoCode: $('#promo').val()
         }
 
         $.ajax({
