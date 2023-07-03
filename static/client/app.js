@@ -125,25 +125,17 @@ function initThirdBookingStep(vanName, dateRange, startDate, endDate) {
 
         const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
         const diffDays = Math.round(Math.abs((startDate - endDate) / oneDay));
+        const sum = diffDays * 140 + 80;
+        const paymentLink = "https://mypos.com/@thestable/"+sum;
 
-        $('.calc-price').text((diffDays * 140 + 80))
+        $('.calc-price').text(sum)
     }
-
-    $('#email-radio, #phone-radio').on('change', (e) => {
-        if ($(e.target).attr('id').indexOf('email') != -1) {
-            $('#email').addClass('active')
-            $('#phone').removeClass('active')
-        } else {
-            $('#email').removeClass('active')
-            $('#phone').addClass('active')
-        }
-    })
 
     $('#booking-step-3 .booking-form').on('submit', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        if ($('#email').val() === '' && $('#phone').val() === '') {
-            alert('Please provide either an email or a phone number.');
+        if ($('#phone').val() === '') {
+            alert('Please provide a phone number.');
             return;
         }
         gtag('event', 'booking_form_completed', {
@@ -156,7 +148,6 @@ function initThirdBookingStep(vanName, dateRange, startDate, endDate) {
         $('.booking-confirmation').addClass('active');
 
         let request = {
-            email: $('#email').val(),
             phone: $('#phone').val(),
             van: vanName,
             dateRange: dateRange,
@@ -170,6 +161,14 @@ function initThirdBookingStep(vanName, dateRange, startDate, endDate) {
             data: request,
             success: (data) => {
                 console.log('success')
+               
+                // Delayed redirect after 5 seconds
+                setTimeout(function() {
+                    var calcPrice = parseInt($('.calc-price').text());
+                    var redirectURL = "https://mypos.com/@thestable/" + (calcPrice * 1.95583).toFixed(2);
+                    window.location.href = redirectURL;
+                }, 5000);  // 5000 milliseconds = 5 seconds
+                
             },
             error: (data) => {
                 console.log('error')

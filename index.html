@@ -287,27 +287,13 @@
                         <p class="total-price">Total price: <span class="calc-price">0</span> EUR</p>
 
                         <form class="booking-form" action="/" method="post">
-                            <div class="booking-form-radio">
-                                <p data-i18n="booking.step.3.form"></p>
-                                <div class="radio-wrapper">
-                                    <input type="radio" name="contact-type" id="email-radio">
-                                    <label data-i18n="booking.step.3.email" for="email-radio"></label>
-                                </div>
-                                <div class="radio-wrapper">
-                                    <input type="radio" name="contact-type" id="phone-radio">
-                                    <label data-i18n="booking.step.3.phone" for="phone-radio"></label>
-                                </div>
-                            </div>
-
-                            <input type="email" name="email" id="email" placeholder="Email">
-                            <input type="tel" name="phone" id="phone" placeholder="Phone number">
+                            <input type="tel" class="active" name="phone" id="phone" placeholder="Phone number">
 
                             <input type="text" name="van-input" id="van-input" hidden>
                             <input type="text" name="date-input" id="date-input" hidden>
                             <button data-i18n="booking.step.3.btn" type="submit" value=""></button>
                         </form>
                     </div>
-
                 </div>
             </div>
             <div class="booking-confirmation">

@@ -74,7 +74,6 @@ $(function() {
 								'3': {
 									instructions: 'Fill in your information so we can contact you after completing the form and confirm your booking',
 									form: 'Choose in which form do you want us to contact you.',
-									email: 'Email',
 									phone: 'Phone',
 									btn: 'book now'
 								},
