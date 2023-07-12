@@ -18,9 +18,6 @@ function initBookingForm() {
         $('input[name="datefilter"]').on('apply.daterangepicker', function (ev, picker) {
             $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
 
-            console.log(picker.startDate.format('YYYY-MM-DD'));
-            console.log(picker.endDate.format('YYYY-MM-DD'));
-
             initSecondBookingStep(picker.startDate, picker.endDate)
             hideThirdBookingStep();
             
@@ -129,9 +126,7 @@ function initThirdBookingStep(vanName, dateRange, startDate, endDate) {
         const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
         var diffDays = Math.round(Math.abs((startDate - endDate) / oneDay));
         var sum = diffDays * 140 + 80;
-        console.log(startDate.format('YYYY-MM-DD'));
-        console.log(endDate.format('YYYY-MM-DD'));
-
+        
         var paymentLink = "https://mypos.com/@thestable/"+sum;
 
         $('.calc-price').text(sum)
