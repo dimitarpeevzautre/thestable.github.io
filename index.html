@@ -142,13 +142,16 @@
     <div class="landing-banner">
         <div class="landing-text-wrapper">
             <div class="landing-text">
-                <p data-i18n="landing.subtitle"></p>
-                <h1 data-i18n="landing.title"></h1>
                 <a data-i18n="landing.booknow" class="landing-book-now btn" href="#book-now"></a>
             </div>
         </div>
         <div class="image-wrapper">
-            <img src="static/HomepageBanner.JPG" alt="">
+            <video id="bigvideo" autoplay playsinline muted loop>
+                <source src="static/thestable.mp4" type="video/mp4">
+            </video>
+            <video id="smallvideo" autoplay playsinline muted loop>
+                <source src="static/thestable_mob.mp4" type="video/mp4">
+            </video>
         </div>
     </div>
     <div class="navigation-anim-trigger"></div>
@@ -216,9 +219,9 @@
                         <p>
                             <!-- Couldn't figure out interpolation, always escapes <span> -->
                             <span data-i18n="pricing.body2.1"></span>
-                            <span class="bold">80 EUR</span>
+                            <span class="bold" data-i18n="pricing.pickup.price"></span>
                             <span data-i18n="pricing.body2.2"></span>
-                            <span class="bold">140 EUR</span>
+                            <span class="bold" data-i18n="pricing.perday.price"></span>
                             <span data-i18n="pricing.body2.3"></span>
                         </p>
                     </div>

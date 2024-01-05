@@ -54,11 +54,11 @@ $(function() {
 							},
 							pickup: {
 								label: 'Pick up',
-								price: '80 EUR'
+								price: '56 EUR'
 							},
 							perday: {
 								label: 'Per day',
-								price: '140 EUR'
+								price: '98 EUR'
 							}
 						},
 						booking: {
@@ -153,12 +153,10 @@ $(function() {
 								'3': 'на ден. Доставяме кемпера до вас блестящо чист и готов за пътуване. Мислете само за приключението.',
 							},
 							pickup: {
-								label: 'Получаване',
-								price: '80 EUR'
+								label: 'Получаване'
 							},
 							perday: {
-								label: 'На ден',
-								price: '140 EUR'
+								label: 'На ден'
 							}
 						},
 						booking: {

@@ -278,7 +278,7 @@ main {
         width: 100%;
 
         &:after {
-            content: '';
+            
             position: absolute;
             top: 0;
             left: 0;
@@ -288,11 +288,23 @@ main {
             background-color: rgba(56, 56, 56, 0.5);
         }
 
-        img {
+        img, video {
             height: 100%;
             width: 100%;
             object-fit: cover;
             object-position: 50% 90%;
+        }
+
+        @media screen and (max-width: 900px) {
+            #bigvideo {
+                display: none;
+            }
+        }
+            
+        @media screen and (min-width: 901px) {
+            #smallvideo {
+                display: none;
+            }
         }
     }
 
@@ -301,8 +313,8 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 95%;
-        top: 0;
+        
+        bottom: 20%;
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
