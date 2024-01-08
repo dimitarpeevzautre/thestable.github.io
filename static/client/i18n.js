@@ -54,11 +54,11 @@ $(function() {
 							},
 							pickup: {
 								label: 'Pick up',
-								price: '56 EUR'
+								price: '80 EUR'
 							},
 							perday: {
 								label: 'Per day',
-								price: '98 EUR'
+								price: '140 EUR'
 							}
 						},
 						booking: {

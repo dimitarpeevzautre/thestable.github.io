@@ -125,8 +125,8 @@ function initThirdBookingStep(vanName, dateRange, startDate, endDate) {
 
         const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
         var diffDays = Math.round(Math.abs((startDate - endDate) / oneDay));
-        var sum = diffDays * 98 + 56;
-        
+        var sum = diffDays * 140 + 80;
+         
         var paymentLink = "https://mypos.com/@thestable/"+sum;
 
         $('.calc-price').text(sum)
