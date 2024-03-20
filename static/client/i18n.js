@@ -58,7 +58,7 @@ $(function() {
 							},
 							perday: {
 								label: 'Per day',
-								price: '140 EUR'
+								price: '100 EUR'
 							}
 						},
 						booking: {
