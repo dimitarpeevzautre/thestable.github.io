@@ -67,20 +67,9 @@ $(function() {
 								label: 'Complete the simple 3 step booking process so you can take one of our campervans out on an adventure',
 								placeholder: 'Choose a date and see what vans we have available'
 							},
-							step: {
-								'2': {
-									instructions: 'Choose which one of our vans to book. Our vans have no functional difference, only visual.'
-								},
-								'3': {
-									instructions: 'Fill in your information so we can contact you after completing the form and confirm your booking',
-									form: 'Choose in which form do you want us to contact you.',
-									phone: 'Phone',
-									btn: 'book now'
-								},
-								'4': {
-									title: 'Thanks for booking one of our vans, we will contact you shortly!'
-								}
-							},
+							redirect: {
+								btn: 'Check availability'
+							}
 						},
 						contacts: {
 							title: 'Contact Us',
@@ -165,20 +154,8 @@ $(function() {
 								label: 'Изпълнете простата процедура за резервация от 3 стъпки, за да вземете един от нашите кемпери на приключение',
 								placeholder: 'Изберете дата и вижте кои кемпери са налични'
 							},
-							step: {
-								'2': {
-									instructions: 'Изберете кой от нашите кемпери да резервирате. Нашите кемпери нямат функционални разлики, само визуални.'
-								},
-								'3': {
-									instructions: 'Попълнете вашата информация, така че да можем да се свържем с вас след завършване на формата и потвърждение на вашата резервация',
-									form: 'Изберете в каква форма искате да се свържем с вас.',
-									email: 'Имейл',
-									phone: 'Телефон',
-									btn: 'резервирай сега'
-								},
-								'4': {
-									title: 'Благодарим ви, че резервирахте един от нашите кемпери, скоро ще се свържем с вас!'
-								}
+							redirect: {
+								btn: 'Провери наличност'
 							},
 							contacts: {
 								title: 'Свържете се с нас',

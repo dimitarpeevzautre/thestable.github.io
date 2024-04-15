@@ -2,6 +2,7 @@ initAnimations();
 initBookingForm();
 navEvents();
 
+const bookingDomain = 'https://booking.thestable.bg/'
 const googleApiKey = 'AIzaSyDEyI-WDW_xvepethIYS3XA11r73NgaVRc';
 
 function initBookingForm() {
@@ -10,6 +11,7 @@ function initBookingForm() {
 
         $('input[name="datefilter"]').daterangepicker({
             autoUpdateInput: false,
+            minDate: new Date(),
             locale: {
                 cancelLabel: 'Clear'
             }
@@ -17,9 +19,6 @@ function initBookingForm() {
 
         $('input[name="datefilter"]').on('apply.daterangepicker', function (ev, picker) {
             $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-
-            initSecondBookingStep(picker.startDate, picker.endDate)
-            hideThirdBookingStep();
             
             gtag('event', 'date_range_selected', {
               'event_category': 'booking',
@@ -29,11 +28,22 @@ function initBookingForm() {
 
         $('input[name="datefilter"]').on('cancel.daterangepicker', function (ev, picker) {
             $(this).val('');
-            hideSecondBookingStep();
-            hideThirdBookingStep();
         });
 
     });
+
+    $('.check-availability').on('click',function(e) {
+        e.preventDefault();
+        e.stopPropagation;
+        
+        let $calendarData = $('input[name="datefilter"]').data('daterangepicker');
+        let startDate = $calendarData.startDate.toISOString();
+        let endDate = $calendarData.endDate.toISOString();
+        if ($('.datepicker').val() && startDate && endDate) {
+            window.location.href = `${bookingDomain}?startDate=${startDate}&endDate=${endDate}`;
+            addLoading($('.book-now'));
+        }
+    })
 }
 
 let vans = {
@@ -78,110 +88,6 @@ function showAvailableVans(startDate, endDate) {
     })
 }
 
-async function initSecondBookingStep(startDate, endDate) {
-    $('html, body').animate({
-        scrollTop: $("#booking-step-2").offset().top - 150
-    }, 200);
-
-    if (!$('.booking-step-2').hasClass('active')) {
-        $('.booking-step-2').addClass('active');
-    }
-
-    showAvailableVans(startDate, endDate);
-
-    $('.van').off('click').on('click', (e) => {
-        let $target = $(e.target);
-        let vanName = $target.data('name');
-
-        if (!vanName) {
-            vanName = $target.parents('.van').data('name');
-        }
-        
-        gtag('event', 'van_selected', {
-          'event_category': 'booking',
-          'event_label': vanName
-        });
-        
-        let dateRange = $('#booking-step-1 .datepicker').val();
-
-        initThirdBookingStep(vanName, dateRange, startDate, endDate)
-    })
-}
-
-function hideSecondBookingStep() {
-    $('.booking-step-2').removeClass('active');
-}
-
-function initThirdBookingStep(vanName, dateRange, startDate, endDate) {
-    $('#van-input').val(vanName);
-    $('#date-input').val(dateRange);
-
-    $('html, body').animate({
-        scrollTop: $("#booking-step-3").offset().top - 150
-    }, 200);
-
-    if (!$('.booking-step-3').hasClass('active')) {
-        $('.booking-step-3').addClass('active');
-
-        const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-        var diffDays = Math.round(Math.abs((startDate - endDate) / oneDay));
-        var sum = diffDays * 140 + 80;
-         
-        var paymentLink = "https://mypos.com/@thestable/"+sum;
-
-        $('.calc-price').text(sum)
-    }
-
-    $('#booking-step-3 .booking-form').on('submit', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        if ($('#phone').val() === '') {
-            alert('Please provide a phone number.');
-            return;
-        }
-        gtag('event', 'booking_form_completed', {
-          'event_category': 'booking',
-          'event_label': vanName,
-          'value': dateRange
-        });
-        
-        $('.booking-container').removeClass('active');
-        $('.booking-confirmation').addClass('active');
-
-        let request = {
-            phone: $('#phone').val(),
-            van: vanName,
-            dateRange: dateRange,
-            priceShown: $('.calc-price').val(),
-            promoCode: $('#promo').val()
-        }
-
-        $.ajax({
-            url: 'https://eoup9yw6a36n9ny.m.pipedream.net',
-            method: 'POST',
-            data: request,
-            success: (data) => {
-                console.log('success')
-               
-                // Delayed redirect after 5 seconds
-                setTimeout(function() {
-                    var calcPrice = parseInt($('.calc-price').text());
-                    var redirectURL = "https://mypos.com/@thestable/" + (calcPrice * 1.95583).toFixed(2);
-                    window.location.href = redirectURL;
-                }, 5000);  // 5000 milliseconds = 5 seconds
-                
-            },
-            error: (data) => {
-                console.log('error')
-            }
-        })
-    })
-}
-
-function hideThirdBookingStep() {
-    $('.booking-step-3').removeClass('active');
-}
-
 function navEvents() {
     $('.nav-btn').on('click', (e) => {
         e.preventDefault()
@@ -201,4 +107,23 @@ function navEvents() {
         $('.nav-links-wrapper').removeClass('active');
         $('html').css({ 'overflow': 'initial' });
     })
+}
+
+
+function addLoading(el) {
+    const html = `
+    <div class='loading'>
+        <div class='spinner-wrapper'>
+        <svg class='spinner' width='65px' height='65px' viewBox='0 0 66 66' xmlns='http://www.w3.org/2000/svg'>
+        <circle class='path' fill='none' stroke-width='6' stroke-linecap='round' cx='33' cy='33' r='30'></circle>
+        </svg>
+        </div>
+    </div>
+    `;
+
+    $(el).append(html);
+}
+
+function removeLoading(el) {
+    $(el).find('.loading').remove();
 }

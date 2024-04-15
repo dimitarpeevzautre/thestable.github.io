@@ -225,48 +225,9 @@
                         <label data-i18n="booking.daterange.label" class="step-instructions" for="datepicker"></label>
                         <input data-i18n="[placeholder]booking.daterange.placeholder" id="datepicker" class="datepicker"
                             type="text" name="datefilter" value="" />
-                    </div>
-                    <div id="booking-step-2" class="booking-step-2">
-                        <p data-i18n="booking.step.2.instructions" class="step-instructions"></p>
-                        <ul class="van-list">
-                            <li class="van" data-name="rocinante">
-                                <div class="van-image">
-                                    <img src="static/HomepageBanner.JPG" alt="">
-                                </div>
-                                <div class="description">
-                                    <h3 data-i18n="van.rocinante.name" class="van-name"></h3>
-                                    <p data-i18n="van.rocinante.description" class="van-description"></p>
-                                </div>
-                            </li>
-                            <li class="van" data-name="alfonso">
-                                <div class="van-image">
-                                    <img src="static/whitebus3.jpg" alt="">
-                                </div>
-                                <div class="description">
-                                    <h3 data-i18n="van.alfonso.name" class="van-name"></h3>
-                                    <p data-i18n="van.alfonso.description" class="van-description"></p>
-                                </div>
-                            </li>
-                            <li class="van" data-name="bucephalus">
-                                <div class="van-image">
-                                    <img src="static/miles.jpg" alt="">
-                                </div>
-                                <div class="description">
-                                    <h3 data-i18n="van.bucephalus.name" class="van-name"></h3>
-                                    <p data-i18n="van.bucephalus.description" class="van-description"></p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="booking-step-3" class="booking-step-3">
-                        <p data-i18n="booking.step.3.instructions" class="step-instructions"></p>
-                        <p class="total-price">Total price: <span class="calc-price">0</span> EUR</p>
-                        <form class="booking-form" action="/" method="post">
-                            <input type="tel" class="active" name="phone" id="phone" placeholder="Phone number">
-                            <input type="text" name="van-input" id="van-input" hidden>
-                            <input type="text" name="date-input" id="date-input" hidden>
-                            <button data-i18n="booking.step.3.btn" type="submit" value=""></button>
-                        </form>
+                        <div>
+                            <a href="javascript:void(0)" class="check-availability btn" data-i18n="booking.redirect.btn">Check availability</a>
+                        </div>
                     </div>
                 </div>
             </div>
