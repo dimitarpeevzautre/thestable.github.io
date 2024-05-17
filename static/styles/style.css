@@ -471,25 +471,7 @@ main {
 .book-now .book-now-title {
   margin-bottom: 50px;
 }
-.book-now .booking-step-1,
-.book-now .booking-step-2,
-.book-now .booking-step-3 {
-  max-height: 0;
-  height: 100%;
-  transition: max-height 0.5s ease-in, clip-path 0.5s ease-in;
-  overflow: hidden;
-  clip-path: polygon(0 0, 0 0, 0 0);
-  padding-top: 20px;
-}
-.book-now .booking-step-1.active,
-.book-now .booking-step-2.active,
-.book-now .booking-step-3.active {
-  max-height: 3999px;
-  clip-path: polygon(0 0, 250% 0, 0 250%);
-}
-.book-now .booking-step-1 .step-instructions,
-.book-now .booking-step-2 .step-instructions,
-.book-now .booking-step-3 .step-instructions {
+.book-now .booking-step-1 .step-instructions {
   display: block;
   font-size: 18px;
   max-width: 500px;
@@ -497,20 +479,10 @@ main {
   padding-bottom: 20px;
 }
 
-.booking-container {
-  max-height: 0;
-  transition: max-height 0.4s ease-out;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-.booking-container.active {
-  max-height: 4000px;
-  padding: 200px 0;
-}
-
 .booking-step-1 input.datepicker {
   max-width: 400px;
   margin: 50px;
+  box-sizing: border-box;
 }
 @media (max-width: 900px) {
   .booking-step-1 input.datepicker {
@@ -526,159 +498,6 @@ main {
   display: none;
 }
 
-.booking-step-2 .van-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  overflow: hidden;
-  justify-content: center;
-}
-.booking-step-2 .van-list .van {
-  display: none;
-  position: relative;
-  min-width: 300px;
-  max-width: 500px;
-  width: 100%;
-  height: 450px;
-  margin: 30px;
-  border-radius: 30px;
-  overflow: hidden;
-  cursor: pointer;
-  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
-  transition: box-shadow 0.4s ease-out;
-}
-.booking-step-2 .van-list .van .van-image {
-  z-index: 1;
-  position: relative;
-  height: 100%;
-}
-.booking-step-2 .van-list .van .van-image img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  border-radius: 4px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.booking-step-2 .van-list .van .description {
-  position: absolute;
-  bottom: 0;
-  text-align: left;
-  padding: 15px 25px;
-  margin-top: -35px;
-  background-color: #2EC4B6;
-  border-top-left-radius: 30px;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  z-index: 2;
-}
-.booking-step-2 .van-list .van .description .van-name {
-  color: whitesmoke;
-  padding: 10px 0;
-  margin: 10px 0;
-  position: relative;
-}
-.booking-step-2 .van-list .van .description .van-name::after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  content: "";
-  height: 1px;
-  width: 100%;
-  max-width: 0;
-  transition: max-width 1s ease-out;
-  border-radius: 2px;
-  background-color: white;
-}
-.booking-step-2 .van-list .van .description .van-description {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.6s ease-out;
-  color: whitesmoke;
-}
-.booking-step-2 .van-list .van:hover {
-  box-shadow: 0px 0px 15px 5px rgba(46, 196, 182, 0.4);
-}
-.booking-step-2 .van-list .van:hover .description .van-name::after {
-  max-width: 300px;
-}
-.booking-step-2 .van-list .van:hover .description .van-description {
-  max-height: 400px;
-}
-
-.booking-step-3 {
-  margin-top: 100px;
-}
-.booking-step-3 form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.booking-step-3 input {
-  max-width: 400px;
-  box-sizing: border-box;
-}
-.booking-step-3 .booking-form-radio {
-  max-width: 400px;
-  width: 100%;
-  padding-bottom: 20px;
-}
-.booking-step-3 .booking-form-radio p {
-  padding: 10px 0;
-}
-.booking-step-3 .booking-form-radio .radio-wrapper {
-  text-align: left;
-}
-.booking-step-3 .booking-form-radio .radio-wrapper label {
-  padding-left: 15px;
-}
-.booking-step-3 .booking-form-radio .radio-wrapper input {
-  margin: 20px 0;
-}
-.booking-step-3 .total-price {
-  font-size: 22px;
-  padding: 20px;
-}
-.booking-step-3 #email,
-.booking-step-3 #phone {
-  max-width: 0;
-  max-height: 0;
-  padding: 0;
-  transition: max-width 0.2s ease-out;
-}
-.booking-step-3 #email.active,
-.booking-step-3 #phone.active {
-  max-width: 400px;
-  max-height: 200px;
-  padding: 12px 20px;
-  width: 100%;
-}
-.booking-step-3 button {
-  margin-top: 30px;
-}
-
-.booking-confirmation {
-  max-height: 0;
-  transition: max-height 0.4s ease-out;
-  overflow: hidden;
-}
-.booking-confirmation.active {
-  max-height: 600px;
-  padding: 100px;
-}
-.booking-confirmation img {
-  width: 200px;
-}
-.booking-confirmation h4 {
-  font-size: 34px;
-  max-width: 650px;
-  margin: auto;
-  padding-bottom: 70px;
-}
-
 .contact-us {
   text-align: center;
   background-color: #FFBF69;
@@ -688,6 +507,61 @@ main {
 }
 .contact-us .contacts-label {
   white-space: nowrap;
+}
+
+.check-availability {
+  display: inline-block;
+}
+@media (max-width: 900px) {
+  .check-availability {
+    margin-top: 50px;
+  }
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+  background: linear-gradient(19deg, rgba(149, 220, 211, 0.168627451) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.loading .spinner-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loading .spinner {
+  animation: rotator 1s linear infinite;
+}
+.loading .spinner .path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 3s ease-in-out infinite;
+  stroke: #2EC4B6;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+  }
+  100% {
+    stroke-dashoffset: 187;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
