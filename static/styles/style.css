@@ -122,8 +122,39 @@ nav .logo-nav {
   -webkit-mask: url("../thestable.svg") center/100% 100% no-repeat;
   mask: url("../thestable.svg") center/100% 100% no-repeat;
 }
+nav .language-selector {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  z-index: 4;
+  justify-content: center;
+}
+nav .language-selector .lang-btn {
+  width: 30px;
+  height: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background-size: cover;
+  background-position: center;
+}
+nav .language-selector .lang-btn:hover {
+  transform: scale(1.1);
+}
+nav .language-selector .lang-btn.active {
+  box-shadow: 0 0 0 2px #2EC4B6;
+}
+nav .language-selector .lang-btn.en {
+  background-image: url("/static/en-flag.svg");
+}
+nav .language-selector .lang-btn.bg {
+  background-image: url("/static/bg-flag.svg");
+}
 nav .nav-links {
   padding: 20px 50px 20px;
+  display: flex;
+  align-items: center;
 }
 nav .nav-links a {
   color: var(--font-color);
@@ -138,6 +169,12 @@ nav .nav-links .book-now-btn {
   color: #FFFFFF;
   padding: 10px 25px;
   border-radius: 25px;
+}
+nav .nav-links .language-selector {
+  display: flex;
+  gap: 10px;
+  margin-left: 15px;
+  margin-top: 0;
 }
 @media (max-width: 900px) {
   nav .nav-links-wrapper {
@@ -167,6 +204,10 @@ nav .nav-links .book-now-btn {
   nav .nav-links .book-now-btn {
     margin: 20px 0;
     width: fit-content;
+  }
+  nav .nav-links .language-selector {
+    margin-top: 20px;
+    margin-left: 0;
   }
   nav .nav-btn div {
     background-color: var(--font-color);

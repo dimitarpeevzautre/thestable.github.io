@@ -1,6 +1,7 @@
 initAnimations();
 initBookingForm();
 navEvents();
+// Language selector will be initialized after i18next is loaded
 
 const bookingDomain = 'https://booking.thestable.bg/'
 const googleApiKey = 'AIzaSyDEyI-WDW_xvepethIYS3XA11r73NgaVRc';
@@ -127,3 +128,4 @@ function addLoading(el) {
 function removeLoading(el) {
     $(el).find('.loading').remove();
 }
+

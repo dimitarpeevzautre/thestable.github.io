@@ -144,9 +144,46 @@ nav {
         -webkit-mask: url('../thestable.svg') center / 100% 100% no-repeat;
         mask: url('../thestable.svg') center / 100% 100% no-repeat;
     }
+    
+    .language-selector {
+        display: flex;
+        gap: 10px;
+        position: relative;
+        z-index: 4;
+        justify-content: center;
+        
+        .lang-btn {
+            width: 30px;
+            height: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 3px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            background-size: cover;
+            background-position: center;
+            
+            &:hover {
+                transform: scale(1.1);
+            }
+            
+            &.active {
+                box-shadow: 0 0 0 2px $turquoise;
+            }
+            
+            &.en {
+                background-image: url('/static/en-flag.svg');
+            }
+            
+            &.bg {
+                background-image: url('/static/bg-flag.svg');
+            }
+        }
+    }
 
     .nav-links {
         padding: 20px 50px 20px;
+        display: flex;
+        align-items: center;
 
         a {
             color: var(--font-color);
@@ -162,6 +199,13 @@ nav {
             color: $white;
             padding: 10px 25px;
             border-radius: 25px;
+        }
+        
+        .language-selector {
+            display: flex;
+            gap: 10px;
+            margin-left: 15px;
+            margin-top: 0;
         }
     }
 
@@ -196,6 +240,11 @@ nav {
             .book-now-btn {
                 margin: 20px 0;
                 width: fit-content;
+            }
+            
+            .language-selector {
+                margin-top: 20px;
+                margin-left: 0;
             }
         }
 
