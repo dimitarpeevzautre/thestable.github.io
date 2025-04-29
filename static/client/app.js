@@ -40,10 +40,10 @@ function initBookingForm() {
         let $calendarData = $('input[name="datefilter"]').data('daterangepicker');
         let startDate = $calendarData.startDate.toISOString();
         let endDate = $calendarData.endDate.toISOString();
-        if ($('.datepicker').val() && startDate && endDate) {
-            window.location.href = `${bookingDomain}?startDate=${startDate}&endDate=${endDate}`;
-            addLoading($('.book-now'));
-        }
+        
+        window.location.href = `${bookingDomain}?startDate=${startDate}&endDate=${endDate}`;
+        addLoading($('.book-now'));
+        
     })
 }
 
