@@ -99,30 +99,50 @@
             </h1>
             <div class="flex items-center space-x-4 md:space-x-8 text-sm md:text-base font-medium">
                 <a href="#journeys" class="nav-link border-b-2 border-transparent pb-1">The Journeys</a>
-                <a href="#guide" class="nav-link border-b-2 border-transparent pb-1">Traveler's Guide</a>
+                <a href="#pricing" class="nav-link border-b-2 border-transparent pb-1">Pricing</a>
+                <a href="#reviews" class="nav-link border-b-2 border-transparent pb-1">Reviews</a>
+                <a href="#guide" class="nav-link border-b-2 border-transparent pb-1">FAQ</a>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <div class="relative h-[60vh] md:h-[70vh] bg-cover bg-center bg-no-repeat" style="background-image: url('static/nevski.jpeg');">
-        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-        <div class="relative z-10 flex items-center justify-center h-full">
-            <div class="text-center text-white px-4">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4">The Great Bulgarian Journey</h1>
-                <p class="text-xl md:text-2xl font-light">Six Selected Adventures for 2026</p>
-            </div>
-        </div>
-    </div>
-
     <main class="container mx-auto p-4 md:p-8">
         <!-- The Journeys Section -->
         <section id="journeys" class="section">
+            <!-- Hero Section -->
+            <div class="relative h-[60vh] md:h-[70vh] overflow-hidden -mx-4 md:-mx-8 mb-16">
+                <video 
+                    class="absolute inset-0 w-full h-full object-cover" 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                    poster="static/nevski.jpeg">
+                    <source src="static/bov.mp4" type="video/mp4">
+                    <!-- Fallback for browsers that don't support video -->
+                    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('static/nevski.jpeg');"></div>
+                </video>
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div class="relative z-10 flex items-center justify-center h-full">
+                    <div class="text-center text-white px-4">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">Guided Camper Adventures Through Bulgaria</h1>
+                        <p class="text-lg md:text-xl font-medium mb-2">Expert-led journeys for groups of up to 10</p>
+                        <p class="text-xl md:text-2xl font-light mb-8">Six Selected Adventures for 2026</p>
+                        <button class="bg-accent-green hover:bg-dark-green text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            Book Your Adventure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <div class="text-center mb-12 mt-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-dark-green mb-2">Six Selected Journeys for 2026</h2>
-                <p class="max-w-3xl mx-auto text-gray-600">
+                <p class="max-w-3xl mx-auto text-gray-600 mb-6">
                     Each journey is designed to offer a unique experience in Bulgaria. Choose the adventure that calls to you and prepare to explore.
                 </p>
+                <button class="bg-accent-green hover:bg-dark-green text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-md">
+                    View Pricing & Availability
+                </button>
             </div>
 
             <!-- Trip Selection Grid -->
@@ -141,16 +161,239 @@
             </div>
         </section>
 
-        <!-- Traveler's Guide Section -->
+        <!-- Pricing Section -->
+        <section id="pricing" class="section">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-green mb-2">Pricing & Camper Options</h2>
+                <p class="max-w-3xl mx-auto text-gray-600 mb-8">
+                    All journeys are priced per camper van, regardless of the model you choose. Each van accommodates different group sizes to suit your travel needs.
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <!-- Pricing Header -->
+                <div class="bg-accent-green text-white text-center py-8 rounded-t-2xl">
+                    <h3 class="text-4xl font-bold mb-2">€2,500</h3>
+                    <p class="text-xl">Per Camper Van</p>
+                    <p class="text-sm opacity-90 mt-2">9-day guided adventure • All accommodations included</p>
+                </div>
+
+                <!-- Camper Options -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-0 bg-white rounded-b-2xl shadow-lg overflow-hidden">
+                    <!-- Beach Camper -->
+                    <div class="p-6 border-r border-gray-200 last:border-r-0">
+                        <div class="text-center mb-4">
+                            <div class="text-3xl mb-2">🏖️</div>
+                            <h4 class="text-xl font-bold text-dark-green mb-1">California Beach</h4>
+                        </div>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <div class="flex justify-between">
+                                <span>Capacity:</span>
+                                <span class="font-semibold">Up to 5 people</span>
+                            </div>
+                            <div class="text-xs text-gray-500 mt-3">
+                               Doesn't have the kitchen but is a bit more spacious inside. The only one that can accomodate up to 5 people.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ocean Camper -->
+                    <div class="p-6 border-r border-gray-200 last:border-r-0 bg-gray-50">
+                        <div class="text-center mb-4">
+                            <div class="text-3xl mb-2">🌊</div>
+                            <h4 class="text-xl font-bold text-dark-green mb-1">California Ocean</h4>
+                        </div>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <div class="flex justify-between">
+                                <span>Capacity:</span>
+                                <span class="font-semibold">Up to 4 people</span>
+                            </div>
+                            <div class="text-xs text-gray-500 mt-3">
+                                Has an indoor kitchen and more storage space for organisation. The most popular choice.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grand California -->
+                    <div class="p-6">
+                        <div class="text-center mb-4">
+                            <div class="text-3xl mb-2">🏔️</div>
+                            <h4 class="text-xl font-bold text-dark-green mb-1">Grand California</h4>
+                        </div>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <div class="flex justify-between">
+                                <span>Capacity:</span>
+                                <span class="font-semibold">Up to 4 people</span>
+                            </div>
+                            <div class="text-xs text-gray-500 mt-3">
+                                Has most space inside, a full kitchen and a bathroom.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What's Included -->
+                <div class="bg-warm-beige p-6 rounded-2xl mt-8">
+                    <h4 class="text-xl font-bold text-dark-green mb-4 text-center">What's Included in Your Adventure</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+                        <div class="flex items-start">
+                            <span class="text-accent-green mr-2">✓</span>
+                            <span>Expert guide for the entire 9-day journey</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-accent-green mr-2">✓</span>
+                            <span>All campsite and accommodation fees</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-accent-green mr-2">✓</span>
+                            <span>Detailed route planning and navigation</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-accent-green mr-2">✓</span>
+                            <span>Cultural experiences and local insights</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-accent-green mr-2">✓</span>
+                            <span>Emergency support throughout the trip</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-accent-green mr-2">✓</span>
+                            <span>New friends and lots of fun</span>
+                        </div>
+                    </div>
+                    <div class="text-center mt-6">
+                        <button class="bg-accent-green hover:bg-dark-green text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-md">
+                            Reserve Your Camper Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- What's Not Included -->
+                <div class="bg-white border-2 border-gray-200 p-6 rounded-2xl mt-6">
+                    <h4 class="text-xl font-bold text-dark-green mb-4 text-center">What's Not Included</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+                        <div class="flex items-start">
+                            <span class="text-red-500 mr-2">✗</span>
+                            <span>Flights to/from Sofia, Bulgaria</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-red-500 mr-2">✗</span>
+                            <span>Meals and drinks (restaurants, groceries)</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-red-500 mr-2">✗</span>
+                            <span>Museum and attraction entry tickets</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-red-500 mr-2">✗</span>
+                            <span>Fuel for the camper van</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="section">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-green mb-2">What Our Travelers Say</h2>
+                <p class="max-w-3xl mx-auto text-gray-600 mb-8">
+                    Real experiences from adventurers who have explored Bulgaria with us.
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <!-- Reviews Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Review 1 - Replace with your actual Google reviews -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400 text-sm">
+                                ★★★★★
+                            </div>
+                            <span class="ml-2 text-sm text-gray-600">5.0</span>
+                        </div>
+                        <p class="text-gray-700 mb-4 italic">
+                            "Add your actual Google review text here. This was an amazing experience exploring Bulgaria..."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-accent-green rounded-full flex items-center justify-center text-white font-bold">
+                                A
+                            </div>
+                            <div class="ml-3">
+                                <p class="font-semibold text-sm">Anonymous Reviewer</p>
+                                <p class="text-xs text-gray-500">Google Review</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 - Replace with your actual Google reviews -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400 text-sm">
+                                ★★★★★
+                            </div>
+                            <span class="ml-2 text-sm text-gray-600">5.0</span>
+                        </div>
+                        <p class="text-gray-700 mb-4 italic">
+                            "Add your second Google review here. The camper van adventure was incredible..."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-accent-green rounded-full flex items-center justify-center text-white font-bold">
+                                B
+                            </div>
+                            <div class="ml-3">
+                                <p class="font-semibold text-sm">Another Reviewer</p>
+                                <p class="text-xs text-gray-500">Google Review</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 - Replace with your actual Google reviews -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400 text-sm">
+                                ★★★★★
+                            </div>
+                            <span class="ml-2 text-sm text-gray-600">5.0</span>
+                        </div>
+                        <p class="text-gray-700 mb-4 italic">
+                            "Add your third Google review here. Professional guides and amazing destinations..."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-accent-green rounded-full flex items-center justify-center text-white font-bold">
+                                C
+                            </div>
+                            <div class="ml-3">
+                                <p class="font-semibold text-sm">Happy Customer</p>
+                                <p class="text-xs text-gray-500">Google Review</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Reviews Link -->
+                <div class="text-center">
+                    <a href="#" target="_blank" class="inline-flex items-center text-accent-green hover:text-dark-green font-semibold transition-colors duration-300">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.46 6c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.57-2.11-9.96-5.02-.42.72-.66 1.55-.66 2.44 0 1.67.85 3.14 2.14 4-.79-.02-1.53-.24-2.18-.6v.06c0 2.33 1.66 4.28 3.86 4.72-.4.11-.83.17-1.27.17-.31 0-.62-.03-.92-.08.62 1.94 2.42 3.35 4.56 3.39-1.67 1.31-3.78 2.09-6.07 2.09-.39 0-.78-.02-1.17-.07 2.18 1.4 4.77 2.21 7.55 2.21 9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.02-.63.96-.69 1.79-1.56 2.45-2.55z"/>
+                        </svg>
+                        Read all reviews on Google
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
         <section id="guide" class="section">
              <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark-green mb-2">Traveler's Guide</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-green mb-2">Frequently Asked Questions</h2>
                 <p class="max-w-3xl mx-auto text-gray-600">
-                    Important information for safe and enjoyable camper travel throughout Bulgaria. Here you will find key driving rules, camping tips and our code of responsible behavior.
+                    Everything you need to know for your Bulgarian camper adventure. From driving requirements to camping regulations and travel tips.
                 </p>
             </div>
             <div class="max-w-4xl mx-auto space-y-4">
-                <!-- Guide content will be injected here -->
+                <!-- FAQ content will be injected here -->
             </div>
         </section>
 
@@ -283,53 +526,107 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    const guideData = [
+    const faqData = [
         {
-            title: 'Essential driving regulations',
+            title: 'Do I need any special documents or permits to drive in Bulgaria?',
             content: `
-                <ul class="list-disc list-inside space-y-2 text-gray-700">
-                    <li><b>Vignette Requirement:</b> All vehicles must have a valid digital vignette (e-vignette) to use the national road network. Purchase online in advance from <a href="https://www.bgtoll.bg" target="_blank" class="text-accent-green underline">www.bgtoll.bg</a> to prevent fines up to €150 and avoid border delays.</li>
-                    <li><b>Road Conditions:</b> Quality varies significantly. Major motorways like A1 Trakia are modern and well-maintained, but rural and secondary roads can be substandard with potholes, uneven surfaces, and potential obstacles like stray animals or farm equipment. Avoid driving unknown rural roads after dark.</li>
-                    <li><b>Required Vehicle Equipment:</b> Every vehicle must have a complete first-aid kit, reflective warning triangle, and fire extinguisher. High-visibility warning vests are mandatory if exiting vehicle on motorways or main roads.</li>
-                    <li><b>Traffic Rules:</b> Drive on right-hand side with overtaking on left. Mandatory use of dipped (low-beam) headlights at all times, day and night. Legal blood alcohol limit is strict 0.05%. Speed limits: 50 km/h urban areas, 90 km/h rural roads, 130 km/h motorways (unless posted otherwise).</li>
-                </ul>
-            `
-        },
-        {
-            title: 'Convoy camping strategy: Official & permission-based stays',
-            content: `
-                <p class="mb-4 text-gray-700"><strong>Wild camping is officially prohibited</strong> by Bulgarian law. While often tolerated in remote areas, fines can reach €1000 in protected nature reserves. For a commercial operation, we use a professional <strong>"Permission-Based Camping"</strong> strategy.</p>
-                <div class="mb-4">
-                    <h4 class="font-semibold text-gray-800 mb-2">Permission-Based Camping Approach:</h4>
-                    <p class="text-gray-700 mb-2">Instead of unannounced parking, we proactively contact and secure explicit permission from landowners to host our 10-van convoy. This eliminates legal risk, ensures welcoming environment, and often leads to memorable cultural exchanges.</p>
-                    <p class="text-gray-700 mb-2"><strong>Prime targets:</strong> Tourist-friendly wineries, rural farms, and guesthouses with ample land. We contact potential hosts months in advance with clear proposals outlining group size, responsible tourism commitment, and economic benefits.</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-gray-800 mb-2">Official Campsites:</h4>
-                    <p class="text-gray-700">We prioritize sites with 30-50+ pitches capacity. Examples: Camping Kapinovski (160 pitches), 7 Lakes Camping (60 pitches), Glamping & Motel Alliance (50 pitches). Advance block booking is essential, especially during peak season or major events like Rose Festival.</p>
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>Digital Vignette (Required):</strong> All vehicles must have a valid e-vignette to use Bulgarian roads. Purchase online in advance from <a href="https://www.bgtoll.bg" target="_blank" class="text-accent-green underline">www.bgtoll.bg</a> to avoid fines up to €150.</p>
+                    <p><strong>International Driving Permit:</strong> Required for non-EU drivers. EU license holders can drive with their national license.</p>
+                    <p><strong>Vehicle Documentation:</strong> Bring vehicle registration, insurance documents, and rental agreements if applicable.</p>
                 </div>
             `
         },
         {
-            title: 'Responsible camping code of conduct',
+            title: 'What are the essential driving rules I need to know?',
             content: `
-                <div class="space-y-4 text-gray-700">
-                    <div class="border-l-4 border-accent-green pl-4">
-                        <h4 class="font-semibold text-gray-800">Leave No Trace</h4>
-                        <p>Pack out everything you pack in including all trash, food scraps, and litter. Leave your pitch cleaner than you found it. This preserves natural beauty for future visitors and respects property owners.</p>
-                    </div>
-                    <div class="border-l-4 border-accent-green pl-4">
-                        <h4 class="font-semibold text-gray-800">Respect Fire Safety</h4>
-                        <p>Only light fires in designated fire pits or rings. Never leave fire unattended and ensure complete extinguishing before leaving. Wildfire is serious risk; Bulgarian law strictly forbids open fires outside designated areas.</p>
-                    </div>
-                    <div class="border-l-4 border-accent-green pl-4">
-                        <h4 class="font-semibold text-gray-800">Protect Wildlife & Conserve Water</h4>
-                        <p>Observe wildlife from distance, never feed animals. Secure all food and rubbish (Bulgaria has bears and wild boars). Use water sparingly; when using natural sources, use biodegradable soap and dispose wastewater 60+ meters from water body.</p>
-                    </div>
-                    <div class="border-l-4 border-accent-green pl-4">
-                        <h4 class="font-semibold text-gray-800">Be a Good Neighbor & Drive Responsibly</h4>
-                        <p>Respect quiet hours, maintain low noise levels. Stay on designated roads - off-road driving prohibited in national parks and nature reserves, causing significant environmental damage.</p>
-                    </div>
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>Basic Rules:</strong> Drive on the right-hand side, overtake on the left. Headlights must be on at all times (day and night).</p>
+                    <p><strong>Speed Limits:</strong> 50 km/h in urban areas, 90 km/h on rural roads, 130 km/h on motorways (unless posted otherwise).</p>
+                    <p><strong>Blood Alcohol Limit:</strong> Strict 0.05% - virtually zero tolerance policy.</p>
+                    <p><strong>Road Conditions:</strong> Major motorways are excellent, but rural roads can have potholes and obstacles. Avoid unknown rural roads after dark.</p>
+                </div>
+            `
+        },
+        {
+            title: 'What safety equipment must I carry in the camper van?',
+            content: `
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>Mandatory Equipment:</strong></p>
+                    <ul class="list-disc list-inside ml-4 space-y-1">
+                        <li>Complete first-aid kit (unexpired)</li>
+                        <li>Reflective warning triangle</li>
+                        <li>Fire extinguisher</li>
+                        <li>High-visibility warning vests (mandatory when exiting vehicle on main roads)</li>
+                    </ul>
+                    <p class="text-sm text-gray-600 italic">All equipment will be provided and checked by our guides before departure.</p>
+                </div>
+            `
+        },
+        {
+            title: 'Is wild camping allowed in Bulgaria?',
+            content: `
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>Official Policy:</strong> Wild camping is prohibited by Bulgarian law, with fines up to €1000 in protected areas.</p>
+                    <p><strong>Our Solution:</strong> We use a professional "Permission-Based Camping" approach - securing explicit permission from landowners to host our convoy.</p>
+                    <p><strong>Accommodation Strategy:</strong> Mix of official campsites (30-50+ pitches) and pre-arranged stays at tourist-friendly wineries, farms, and guesthouses with ample land.</p>
+                    <p><strong>Benefits:</strong> Legal compliance, welcoming environment, and authentic cultural exchanges with local hosts.</p>
+                </div>
+            `
+        },
+        {
+            title: 'What should I expect from the campsites and accommodations?',
+            content: `
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>Official Campsites:</strong> Modern facilities with 30-160 pitches. Examples include Camping Kapinovski, 7 Lakes Camping, and Glamping & Motel Alliance.</p>
+                    <p><strong>Permission-Based Stays:</strong> Unique experiences at wineries, farms, and rural guesthouses with basic facilities but incredible atmosphere.</p>
+                    <p><strong>Advance Booking:</strong> All accommodations are pre-booked months in advance, especially during peak seasons and festivals.</p>
+                    <p><strong>Group Size:</strong> All locations are selected to accommodate our full convoy of up to 10 camper vans.</p>
+                </div>
+            `
+        },
+        {
+            title: 'What is our responsible camping code of conduct?',
+            content: `
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>Environmental Respect:</strong></p>
+                    <ul class="list-disc list-inside ml-4 space-y-1">
+                        <li>Leave no trace - pack out all waste</li>
+                        <li>Use designated toilet facilities only</li>
+                        <li>Respect local wildlife and vegetation</li>
+                        <li>Keep noise levels considerate, especially in rural areas</li>
+                    </ul>
+                    <p><strong>Cultural Sensitivity:</strong></p>
+                    <ul class="list-disc list-inside ml-4 space-y-1">
+                        <li>Follow local customs and traditions</li>
+                        <li>Support local businesses when possible</li>
+                        <li>Learn basic Bulgarian phrases for courtesy</li>
+                        <li>Respect photography restrictions at religious sites</li>
+                    </ul>
+                </div>
+            `
+        },
+        {
+            title: 'What happens in case of emergency or breakdown?',
+            content: `
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>Emergency Numbers:</strong> 112 (general emergency), 165 (road assistance)</p>
+                    <p><strong>Guide Support:</strong> Our expert guides provide 24/7 emergency support throughout the journey with local knowledge and contacts.</p>
+                    <p><strong>Vehicle Issues:</strong> Comprehensive insurance coverage and local mechanic network for breakdowns.</p>
+                    <p><strong>Medical Support:</strong> First aid training for guides, clear protocol for medical emergencies, and knowledge of local hospitals.</p>
+                    <p><strong>Communication:</strong> Group WhatsApp chat and satellite communication backup in remote areas.</p>
+                </div>
+            `
+        },
+        {
+            title: 'What should I pack for the journey?',
+            content: `
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>Essential Documents:</strong> Passport, driving license, insurance documents, travel insurance</p>
+                    <p><strong>Clothing:</strong> Layers for varying weather, waterproof jacket, comfortable hiking boots, formal outfit for cultural sites</p>
+                    <p><strong>Personal Items:</strong> Medications, sunscreen, insect repellent, camera, portable charger</p>
+                    <p><strong>Not Needed:</strong> Camping equipment (provided), safety equipment (provided), detailed maps (provided)</p>
+                    <p class="text-sm text-gray-600 italic">Detailed packing list provided upon booking confirmation.</p>
                 </div>
             `
         }
@@ -358,9 +655,9 @@ document.addEventListener('DOMContentLoaded', () => {
         grid.appendChild(card);
     });
 
-    // Populate guide section
-    const guideContainer = document.querySelector('#guide .max-w-4xl');
-    guideData.forEach((item, index) => {
+    // Populate FAQ section
+    const faqContainer = document.querySelector('#guide .max-w-4xl');
+    faqData.forEach((item, index) => {
         const wrapper = document.createElement('div');
         wrapper.className = 'bg-white rounded-xl border border-gray-200/80 overflow-hidden';
         wrapper.innerHTML = `
@@ -372,7 +669,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${item.content}
             </div>
         `;
-        guideContainer.appendChild(wrapper);
+        faqContainer.appendChild(wrapper);
     });
 
 
@@ -391,8 +688,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Event listener for guide toggles
-    guideContainer.addEventListener('click', (e) => {
+    // Event listener for FAQ toggles
+    faqContainer.addEventListener('click', (e) => {
         const toggle = e.target.closest('.guide-toggle');
         if (toggle) {
             const content = toggle.nextElementSibling;
