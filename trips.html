@@ -25,6 +25,23 @@
             color: #4B4B4B;
         }
         .bg-warm-beige { background-color: #F5F1E9; }
+        .mobile-menu { 
+            background-color: #F5F1E9 !important; 
+            background: #F5F1E9 !important;
+            border-left: 2px solid #D1D5DB !important;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            min-height: 100vh;
+            min-height: 100dvh;
+            box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+            top: 0;
+            right: 0;
+            position: fixed;
+            z-index: 9999;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
         .bg-accent-green { background-color: #6B7A5C; }
         .text-accent-green { color: #6B7A5C; }
         .border-accent-green { border-color: #6B7A5C; }
@@ -87,6 +104,28 @@
         .guide-content.open {
             max-height: 1000px; /* Adjust as needed */
         }
+        
+        /* Mobile menu styles */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        .hamburger-line {
+            transition: all 0.3s ease-in-out;
+            transform-origin: center;
+        }
+        .hamburger.open .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .hamburger.open .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -97,13 +136,45 @@
             <h1 class="text-xl md:text-2xl font-bold text-dark-green">
                 🚐 Explore Bulgaria
             </h1>
-            <div class="flex items-center space-x-4 md:space-x-8 text-sm md:text-base font-medium">
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8 text-base font-medium">
                 <a href="#journeys" class="nav-link border-b-2 border-transparent pb-1">The Journeys</a>
                 <a href="#pricing" class="nav-link border-b-2 border-transparent pb-1">Pricing</a>
                 <a href="#reviews" class="nav-link border-b-2 border-transparent pb-1">Reviews</a>
                 <a href="#guide" class="nav-link border-b-2 border-transparent pb-1">FAQ</a>
             </div>
+            
+            <!-- Mobile Hamburger Button -->
+            <button class="md:hidden hamburger flex flex-col justify-center items-center w-8 h-8 space-y-1" id="mobile-menu-btn">
+                <span class="hamburger-line w-6 h-0.5 bg-dark-green block"></span>
+                <span class="hamburger-line w-6 h-0.5 bg-dark-green block"></span>
+                <span class="hamburger-line w-6 h-0.5 bg-dark-green block"></span>
+            </button>
         </nav>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-menu" id="mobile-menu" style="background-color: #F5F1E9; background: #F5F1E9; border-left: 2px solid #D1D5DB; width: 256px;">
+            <div class="flex flex-col h-full">
+                <div class="flex justify-between items-center p-6 border-b border-gray-200">
+                    <h2 class="text-lg font-bold text-dark-green">Menu</h2>
+                    <button class="hamburger open flex flex-col justify-center items-center w-8 h-8 space-y-1" id="mobile-menu-close">
+                        <span class="hamburger-line w-6 h-0.5 bg-dark-green block"></span>
+                        <span class="hamburger-line w-6 h-0.5 bg-dark-green block"></span>
+                        <span class="hamburger-line w-6 h-0.5 bg-dark-green block"></span>
+                    </button>
+                </div>
+                <div class="flex flex-col space-y-6 p-6 text-lg font-medium">
+                    <a href="#journeys" class="nav-link text-dark-green mobile-nav-link">The Journeys</a>
+                    <a href="#pricing" class="nav-link text-dark-green mobile-nav-link">Pricing</a>
+                    <a href="#reviews" class="nav-link text-dark-green mobile-nav-link">Reviews</a>
+                    <a href="#guide" class="nav-link text-dark-green mobile-nav-link">FAQ</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 hidden" id="mobile-menu-overlay"></div>
     </header>
 
     <main class="container mx-auto p-4 md:p-8">
@@ -408,6 +479,45 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function openMobileMenu() {
+        mobileMenu.classList.add('open');
+        mobileMenuOverlay.classList.remove('hidden');
+        mobileMenuBtn.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('open');
+        mobileMenuOverlay.classList.add('hidden');
+        mobileMenuBtn.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+    // Close mobile menu when clicking nav links
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeMobileMenu();
+        }
+    });
 
     const tripsData = [
         {
