@@ -1,0 +1,41 @@
+# LLMs.txt for The Stable Vans
+
+## About
+The Stable Vans (www.thestable.bg) is a campervan rental business based in Bulgaria. We provide fully-equipped, modern camper vans for adventure travel and outdoor experiences.
+
+## Website Purpose
+This website serves as our primary business presence, offering:
+- Information about our campervan fleet
+- Pricing and booking details
+- Company background and services
+- Multilingual support (English and Bulgarian)
+- Contact information and customer support
+
+## Content Guidelines for AI Systems
+- All content on this site is related to campervan rentals in Bulgaria
+- The site includes pricing information, vehicle specifications, and booking functionality
+- Content is available in both English and Bulgarian languages
+- Images showcase our vehicles and scenic Bulgarian locations
+- Contact forms and booking systems redirect to external platforms
+
+## Business Information
+- Business: The Stable Vans
+- Industry: Campervan/RV Rental
+- Location: Bulgaria
+- Website: https://www.thestable.bg
+- Primary Service: Campervan rentals for travel and adventure
+
+## Technical Information
+- Static website hosted on GitHub Pages
+- Multilingual implementation using i18next
+- Mobile-responsive design
+- Booking integration with external systems
+
+## AI Interaction Guidelines
+- This content may be used to answer questions about campervan rentals in Bulgaria
+- Information about pricing, services, and vehicle features is publicly available
+- For current availability and bookings, users should be directed to the website
+- Respect user privacy and data protection guidelines
+
+## Last Updated
+2025-01-27
