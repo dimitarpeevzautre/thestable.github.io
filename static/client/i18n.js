@@ -125,9 +125,6 @@ $(function() {
 									metro: 'Metro: Serdika Station (5 min walk)',
 									bus: 'Bus: Lines 9, 84, 280',
 									parking: 'Limited street parking available'
-								},
-								map: {
-									placeholder: 'Interactive map coming soon'
 								}
 							},
 							time: {
@@ -145,42 +142,6 @@ $(function() {
 								offers: 'Exclusive early-bird rental offers',
 								refreshments: 'Light refreshments and drinks',
 								qna: 'Q&A session with The Stable team'
-							},
-							rsvp: {
-								button: 'RSVP Now',
-								title: 'RSVP for the Event',
-								subtitle: 'Secure your spot at our crowdfunding event. Space is limited!',
-								form: {
-									name: {
-										label: 'Full Name *',
-										placeholder: 'Enter your full name'
-									},
-									email: {
-										label: 'Email Address *',
-										placeholder: 'Enter your email address'
-									},
-									phone: {
-										label: 'Phone Number',
-										placeholder: 'Enter your phone number'
-									},
-									guests: {
-										label: 'Number of Guests',
-										just_me: 'Just me',
-										plus_one: 'Me + 1 guest',
-										plus_two: 'Me + 2 guests',
-										plus_three: 'Me + 3 guests'
-									},
-									message: {
-										label: 'Message (Optional)',
-										placeholder: 'Any special requirements or questions?'
-									},
-									newsletter: 'Subscribe to our newsletter for adventure updates',
-									submit: 'Confirm RSVP'
-								},
-								success: {
-									title: 'Thank You!',
-									message: "Your RSVP has been confirmed. We'll send you a confirmation email with all the event details."
-								}
 							}
 						}
 					}
@@ -287,9 +248,6 @@ $(function() {
 										metro: 'Метро: Станция Сердика (5 мин пешеходно)',
 										bus: 'Автобус: Линии 9, 84, 280',
 										parking: 'Ограничено уличното паркиране'
-									},
-									map: {
-										placeholder: 'Интерактивна карта скоро'
 									}
 								},
 								time: {
@@ -307,42 +265,6 @@ $(function() {
 									offers: 'Ексклузивни оферти за ранно резервиране',
 									refreshments: 'Лека закуска и напитки',
 									qna: 'Сесия с въпроси и отговори с екипа на The Stable'
-								},
-								rsvp: {
-									button: 'Потвърди участие',
-									title: 'Потвърди участие в събитието',
-									subtitle: 'Осигурете си място на нашето събитие за кръдфъндинг. Местата са ограничени!',
-									form: {
-										name: {
-											label: 'Пълно име *',
-											placeholder: 'Въведете пълното си име'
-										},
-										email: {
-											label: 'Имейл адрес *',
-											placeholder: 'Въведете имейл адреса си'
-										},
-										phone: {
-											label: 'Телефонен номер',
-											placeholder: 'Въведете телефонния си номер'
-										},
-										guests: {
-											label: 'Брой гости',
-											just_me: 'Само аз',
-											plus_one: 'Аз + 1 гост',
-											plus_two: 'Аз + 2 гости',
-											plus_three: 'Аз + 3 гости'
-										},
-										message: {
-											label: 'Съобщение (по избор)',
-											placeholder: 'Специални изисквания или въпроси?'
-										},
-										newsletter: 'Абонирайте се за нашия бюлетин за новини за приключения',
-										submit: 'Потвърди участие'
-									},
-									success: {
-										title: 'Благодарим!',
-										message: 'Вашето участие е потвърдено. Ще ви изпратим имейл за потвърждение с всички подробности за събитието.'
-									}
 								}
 							}
 						}
