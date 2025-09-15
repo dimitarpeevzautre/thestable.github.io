@@ -22,8 +22,7 @@ $(function() {
 							booknow: 'Book Now',
 							about: 'About Us',
 							pricing: 'Pricing',
-							contact: 'Contact Us',
-							event: 'Event'
+							contact: 'Contact Us'
 						},
 						landing: {
 							title: 'the Stable',
@@ -193,8 +192,7 @@ $(function() {
 							booknow: 'Резервирай сега',
 							about: 'За нас',
 							pricing: 'Цени',
-							contact: 'Контакт',
-							event: 'Събитие'
+							contact: 'Контакт'
 						},
 						landing: {
 							subtitle: 'Кемпери под наем',
