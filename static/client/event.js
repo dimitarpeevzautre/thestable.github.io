@@ -33,10 +33,49 @@ $(function() {
         const originalText = submitBtn.text();
         submitBtn.prop('disabled', true).text('Submitting...');
         
-        // Simulate form submission (replace with actual backend integration)
-        setTimeout(() => {
-            // Log RSVP data (in production, this would go to a backend)
-            console.log('RSVP Data:', formData);
+        // Submit RSVP data to Google Apps Script
+        const scriptUrl = 'https://script.google.com/macros/s/AKfycbz0IQYuuqyrZ872mK7f6JXU4pfqjk243ICCk0gvqgoKRxIhdbituhPssMkDqwwqOm-26A/exec';
+        
+        // Prepare data for Google Apps Script (matching expected parameters)
+        const submitData = {
+            p: 'subscribeEvent',
+            email: formData.email,
+            name: formData.name,
+            phone: formData.phone || '',
+            message: formData.message || ''
+        };
+        
+        // Submit to Google Apps Script using fetch API with jQuery fallback
+        const submitToScript = () => {
+            if (typeof fetch !== 'undefined') {
+                // Use modern fetch API
+                return fetch(scriptUrl, {
+                    method: 'POST',
+                    mode: 'no-cors', // Google Apps Script may require this
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams(submitData)
+                });
+            } else if (typeof $ !== 'undefined') {
+                // Fallback to jQuery AJAX
+                return $.ajax({
+                    url: scriptUrl,
+                    method: 'POST',
+                    data: submitData,
+                    dataType: 'json'
+                });
+            } else {
+                // Manual form submission fallback
+                return Promise.reject(new Error('No suitable HTTP client available'));
+            }
+        };
+        
+        submitToScript()
+        .then(function(response) {
+            // Log RSVP data for debugging
+            console.log('RSVP Data submitted:', formData);
+            console.log('Google Apps Script response:', response);
             
             // Track event with Google Analytics
             if (typeof gtag === 'function') {
@@ -56,16 +95,40 @@ $(function() {
             }
             
             // Show success message
-            $('#rsvp-form').fadeOut(300, function() {
-                $('#rsvp-success').fadeIn(300);
-            });
+            if (typeof $ !== 'undefined') {
+                $('#rsvp-form').fadeOut(300, function() {
+                    $('#rsvp-success').fadeIn(300);
+                });
+            } else {
+                // Fallback without jQuery
+                document.getElementById('rsvp-form').style.display = 'none';
+                document.getElementById('rsvp-success').style.display = 'block';
+            }
             
             // Store RSVP in local storage for reference
             const rsvpList = JSON.parse(localStorage.getItem('event-rsvps') || '[]');
             rsvpList.push(formData);
             localStorage.setItem('event-rsvps', JSON.stringify(rsvpList));
+        })
+        .catch(function(error) {
+            console.error('Error submitting RSVP:', error);
+            console.log('RSVP Data (failed submission):', formData);
             
-        }, 1500); // Simulate network delay
+            // Show error message to user
+            alert('There was an error submitting your RSVP. Please try again or contact us directly.');
+        })
+        .finally(function() {
+            // Re-enable the submit button
+            if (typeof $ !== 'undefined') {
+                submitBtn.prop('disabled', false).text(originalText);
+            } else {
+                const btn = document.querySelector('.rsvp-submit-btn');
+                if (btn) {
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                }
+            }
+        });
     });
     
     // Smooth scrolling for RSVP button
