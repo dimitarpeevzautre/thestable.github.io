@@ -18,6 +18,7 @@ $(function() {
 				en: {
 					translation: {
 						nav: {
+							home: 'Home',
 							booknow: 'Book Now',
 							about: 'About Us',
 							pricing: 'Pricing',
@@ -102,12 +103,92 @@ $(function() {
 								name: 'Bucephalus',
 								description: "Are you the party organiser? Bucephalus is a VW Multivan. Seats up to 7 people, and likes to go to skiing trips in the Alps."
 							}
+						},
+						event: {
+							title: 'Crowdfunding Event',
+							subtitle: 'Join us for an evening of community and adventure',
+							date: {
+								label: 'Date:',
+								value: 'September 19th, 2025'
+							},
+							location: {
+								label: 'Location:',
+								value: 'Barter Community Hub',
+								title: 'Event Location',
+								venue: {
+									name: 'Barter Community Hub',
+									address: '123 Community Street\nSofia, Bulgaria',
+									description: 'A vibrant community space in the heart of Sofia, perfect for bringing together adventure enthusiasts and supporters of local business initiatives.'
+								},
+								transport: {
+									title: 'Getting There',
+									metro: 'Metro: Serdika Station (5 min walk)',
+									bus: 'Bus: Lines 9, 84, 280',
+									parking: 'Limited street parking available'
+								},
+								map: {
+									placeholder: 'Interactive map coming soon'
+								}
+							},
+							time: {
+								label: 'Time:',
+								value: '7:00 PM - 10:00 PM'
+							},
+							about: {
+								title: 'About the Event',
+								description: "Join The Stable Vans community for an exciting crowdfunding event! We're expanding our fleet of premium camper vans and want you to be part of this journey. This evening will feature presentations about our expansion plans, networking with fellow adventure enthusiasts, and exclusive early-bird offers for our supporters."
+							},
+							highlights: {
+								title: 'Event Highlights',
+								presentation: 'Presentation of our expansion plans',
+								networking: 'Networking with adventure community',
+								offers: 'Exclusive early-bird rental offers',
+								refreshments: 'Light refreshments and drinks',
+								qna: 'Q&A session with The Stable team'
+							},
+							rsvp: {
+								button: 'RSVP Now',
+								title: 'RSVP for the Event',
+								subtitle: 'Secure your spot at our crowdfunding event. Space is limited!',
+								form: {
+									name: {
+										label: 'Full Name *',
+										placeholder: 'Enter your full name'
+									},
+									email: {
+										label: 'Email Address *',
+										placeholder: 'Enter your email address'
+									},
+									phone: {
+										label: 'Phone Number',
+										placeholder: 'Enter your phone number'
+									},
+									guests: {
+										label: 'Number of Guests',
+										just_me: 'Just me',
+										plus_one: 'Me + 1 guest',
+										plus_two: 'Me + 2 guests',
+										plus_three: 'Me + 3 guests'
+									},
+									message: {
+										label: 'Message (Optional)',
+										placeholder: 'Any special requirements or questions?'
+									},
+									newsletter: 'Subscribe to our newsletter for adventure updates',
+									submit: 'Confirm RSVP'
+								},
+								success: {
+									title: 'Thank You!',
+									message: "Your RSVP has been confirmed. We'll send you a confirmation email with all the event details."
+								}
+							}
 						}
 					}
 				},
 				bg: {
 					translation: {
 						nav: {
+							home: 'Начало',
 							booknow: 'Резервирай сега',
 							about: 'За нас',
 							pricing: 'Цени',
@@ -181,8 +262,87 @@ $(function() {
 									description: "Нашият 4x4 автомобил за приключения наречен на коня на Дон Кихот е удобен за до 4 човека. Той е бил в Испания!"
 								},
 								alfonso: {
-									име: 'Алфонсо',
-									описание: "Алфонсо е модел 2022 4x4 VW California, прякорът му е Лила Губен. И подобно на Пипи Дългото чорапче, той може да предложи безкрайни приключения."
+									name: 'Алфонсо',
+									description: "Алфонсо е модел 2022 4x4 VW California, прякорът му е Лила Губен. И подобно на Пипи Дългото чорапче, той може да предложи безкрайни приключения."
+								}
+							},
+							event: {
+								title: 'Събитие за Кръдфъндинг',
+								subtitle: 'Присъединете се към нас за вечер на общност и приключения',
+								date: {
+									label: 'Дата:',
+									value: '19 септември 2025'
+								},
+								location: {
+									label: 'Място:',
+									value: 'Barter Community Hub',
+									title: 'Място на събитието',
+									venue: {
+										name: 'Barter Community Hub',
+										address: '123 Community Street\nСофия, България',
+										description: 'Оживено място за общността в сърцето на София, идеално за събиране на ентусиасти на приключения и поддръжници на местни бизнес инициативи.'
+									},
+									transport: {
+										title: 'Как да стигнете',
+										metro: 'Метро: Станция Сердика (5 мин пешеходно)',
+										bus: 'Автобус: Линии 9, 84, 280',
+										parking: 'Ограничено уличното паркиране'
+									},
+									map: {
+										placeholder: 'Интерактивна карта скоро'
+									}
+								},
+								time: {
+									label: 'Час:',
+									value: '19:00 - 22:00'
+								},
+								about: {
+									title: 'За събитието',
+									description: 'Присъединете се към общността на The Stable Vans за вълнуващо събитие за кръдфъндинг! Разширяваме нашия флот от първокласни кемпери и искаме да бъдете част от това пътуване. Тази вечер ще включва презентации за нашите планове за разширяване, мрежиране с другари ентусиасти на приключения и ексклузивни оферти за ранното резервиране за нашите поддръжници.'
+								},
+								highlights: {
+									title: 'Акценти на събитието',
+									presentation: 'Презентация на плановете ни за разширяване',
+									networking: 'Мрежиране с общността на приключенци',
+									offers: 'Ексклузивни оферти за ранно резервиране',
+									refreshments: 'Лека закуска и напитки',
+									qna: 'Сесия с въпроси и отговори с екипа на The Stable'
+								},
+								rsvp: {
+									button: 'Потвърди участие',
+									title: 'Потвърди участие в събитието',
+									subtitle: 'Осигурете си място на нашето събитие за кръдфъндинг. Местата са ограничени!',
+									form: {
+										name: {
+											label: 'Пълно име *',
+											placeholder: 'Въведете пълното си име'
+										},
+										email: {
+											label: 'Имейл адрес *',
+											placeholder: 'Въведете имейл адреса си'
+										},
+										phone: {
+											label: 'Телефонен номер',
+											placeholder: 'Въведете телефонния си номер'
+										},
+										guests: {
+											label: 'Брой гости',
+											just_me: 'Само аз',
+											plus_one: 'Аз + 1 гост',
+											plus_two: 'Аз + 2 гости',
+											plus_three: 'Аз + 3 гости'
+										},
+										message: {
+											label: 'Съобщение (по избор)',
+											placeholder: 'Специални изисквания или въпроси?'
+										},
+										newsletter: 'Абонирайте се за нашия бюлетин за новини за приключения',
+										submit: 'Потвърди участие'
+									},
+									success: {
+										title: 'Благодарим!',
+										message: 'Вашето участие е потвърдено. Ще ви изпратим имейл за потвърждение с всички подробности за събитието.'
+									}
 								}
 							}
 						}
