@@ -128,7 +128,7 @@
                             <span data-i18n="event.time.value">7:00 PM - 10:00 PM</span>
                         </div>
                     </div>
-                    <a href="#rsvp" class="event-rsvp-btn btn" data-i18n="event.rsvp.button">RSVP Now</a>
+
                 </div>
             </div>
             <div class="event-image-wrapper">
@@ -157,56 +157,6 @@
             </div>
         </div>
 
-        <div id="rsvp" class="rsvp-section">
-            <div class="container">
-                <h2 data-i18n="event.rsvp.title">RSVP for the Event</h2>
-                <p data-i18n="event.rsvp.subtitle">Secure your spot at our crowdfunding event. Space is limited!</p>
-                
-                <form id="rsvp-form" class="rsvp-form">
-                    <div class="form-group">
-                        <label for="rsvp-name" data-i18n="event.rsvp.form.name.label">Full Name *</label>
-                        <input type="text" id="rsvp-name" name="name" required data-i18n="[placeholder]event.rsvp.form.name.placeholder">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="rsvp-email" data-i18n="event.rsvp.form.email.label">Email Address *</label>
-                        <input type="email" id="rsvp-email" name="email" required data-i18n="[placeholder]event.rsvp.form.email.placeholder">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="rsvp-phone" data-i18n="event.rsvp.form.phone.label">Phone Number</label>
-                        <input type="tel" id="rsvp-phone" name="phone" data-i18n="[placeholder]event.rsvp.form.phone.placeholder">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="rsvp-guests" data-i18n="event.rsvp.form.guests.label">Number of Guests</label>
-                        <select id="rsvp-guests" name="guests">
-                            <option value="1" data-i18n="event.rsvp.form.guests.just_me">Just me</option>
-                            <option value="2" data-i18n="event.rsvp.form.guests.plus_one">Me + 1 guest</option>
-                            <option value="3" data-i18n="event.rsvp.form.guests.plus_two">Me + 2 guests</option>
-                            <option value="4" data-i18n="event.rsvp.form.guests.plus_three">Me + 3 guests</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="rsvp-message" data-i18n="event.rsvp.form.message.label">Message (Optional)</label>
-                        <textarea id="rsvp-message" name="message" rows="4" data-i18n="[placeholder]event.rsvp.form.message.placeholder"></textarea>
-                    </div>
-                    
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="rsvp-newsletter" name="newsletter">
-                        <label for="rsvp-newsletter" data-i18n="event.rsvp.form.newsletter">Subscribe to our newsletter for adventure updates</label>
-                    </div>
-                    
-                    <button type="submit" class="rsvp-submit-btn btn" data-i18n="event.rsvp.form.submit">Confirm RSVP</button>
-                </form>
-                
-                <div id="rsvp-success" class="rsvp-success" style="display: none;">
-                    <h3 data-i18n="event.rsvp.success.title">Thank You!</h3>
-                    <p data-i18n="event.rsvp.success.message">Your RSVP has been confirmed. We'll send you a confirmation email with all the event details.</p>
-                </div>
-            </div>
-        </div>
 
         <div class="event-location">
             <div class="container">
@@ -228,12 +178,6 @@
                                 <li data-i18n="event.location.transport.bus">Bus: Lines 9, 84, 280</li>
                                 <li data-i18n="event.location.transport.parking">Limited street parking available</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="location-map">
-                        <!-- Placeholder for map - can be replaced with actual map integration -->
-                        <div class="map-placeholder">
-                            <p data-i18n="event.location.map.placeholder">Interactive map coming soon</p>
                         </div>
                     </div>
                 </div>
