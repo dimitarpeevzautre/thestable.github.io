@@ -72,62 +72,17 @@
 
     let currentLanguage = 'en';
 
-    // Initialize language switcher
-    function initLanguageSwitcher() {
+    // Initialize language (no interactive switcher)
+    function initLanguage() {
         // Get saved language preference or default to 'en'
         const savedLanguage = localStorage.getItem('preferred-language') || 'en';
         currentLanguage = savedLanguage;
         
-        // Update active button
-        updateActiveButton();
-        
-        // Apply initial language
+        // Apply the saved language
         applyTranslations(currentLanguage);
-        
-        // Add click handlers to language buttons
-        const langButtons = document.querySelectorAll('.lang-btn');
-        langButtons.forEach(function(button) {
-            button.addEventListener('click', function() {
-                const lang = button.getAttribute('data-lang');
-                switchLanguage(lang);
-            });
-        });
     }
 
-    // Switch language
-    function switchLanguage(lang) {
-        if (lang !== currentLanguage && translations[lang]) {
-            currentLanguage = lang;
-            
-            // Save preference
-            localStorage.setItem('preferred-language', lang);
-            
-            // Update UI
-            updateActiveButton();
-            applyTranslations(lang);
-            
-            // Track language change if gtag is available
-            if (typeof gtag === 'function') {
-                gtag('event', 'language_change', {
-                    'event_category': 'localization',
-                    'event_label': lang
-                });
-            }
-        }
-    }
 
-    // Update active button state
-    function updateActiveButton() {
-        const langButtons = document.querySelectorAll('.lang-btn');
-        langButtons.forEach(function(button) {
-            const buttonLang = button.getAttribute('data-lang');
-            if (buttonLang === currentLanguage) {
-                button.classList.add('active');
-            } else {
-                button.classList.remove('active');
-            }
-        });
-    }
 
     // Apply translations to the page
     function applyTranslations(lang) {
@@ -152,8 +107,8 @@
 
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
+        document.addEventListener('DOMContentLoaded', initLanguage);
     } else {
-        initLanguageSwitcher();
+        initLanguage();
     }
 })();
