@@ -23,7 +23,7 @@
             'event.highlights.qna': 'Q&A session with The Stable team',
             'event.location.title': 'Event Location',
             'event.location.venue.name': 'Barter Community Hub',
-            'event.location.venue.address': '123 Community Street\nSofia, Bulgaria',
+            'event.location.venue.address': '84 Cherni Vrah Blvd.\nSofia, Bulgaria',
             'event.location.venue.description': 'A vibrant community space in the heart of Sofia, perfect for bringing together adventure enthusiasts and supporters of local business initiatives.',
             'event.location.transport.title': 'Getting There',
             'event.location.transport.metro': 'Metro: Serdika Station (5 min walk)',
