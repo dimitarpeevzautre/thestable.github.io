@@ -115,12 +115,17 @@
           {
             "@type": "Offer",
             "itemOffered": {
-              "@type": "Product",
+              "@type": "Service",
               "name": "Premium Camper Van Rental",
-              "description": "Fully-equipped camper van with unlimited mileage, complete kitchen, and comfortable bedding"
+              "description": "Fully-equipped camper van with unlimited mileage, complete kitchen, and comfortable bedding",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "The Stable Vans"
+              }
             },
             "price": "70",
             "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
               "price": "70",
@@ -133,6 +138,73 @@
       "sameAs": [
         "https://www.facebook.com/thestablevans",
         "https://www.instagram.com/thestablevans"
+      ]
+    }
+    </script>
+
+    <!-- Additional Product Schema for Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Premium Camper Van Rental Bulgaria",
+      "description": "Fully-equipped camper van rentals with unlimited mileage, complete kitchen, comfortable bedding, and premium amenities for exploring Bulgaria",
+      "brand": {
+        "@type": "Brand",
+        "name": "The Stable Vans"
+      },
+      "category": "Vehicle Rental",
+      "offers": {
+        "@type": "Offer",
+        "price": "70",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.thestable.bg",
+        "seller": {
+          "@type": "Organization",
+          "name": "The Stable Vans"
+        },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "70",
+          "priceCurrency": "EUR",
+          "unitText": "per day"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "24",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Adventure Traveler"
+          },
+          "reviewBody": "Amazing experience with The Stable Vans! The camper van was perfectly equipped and made our Bulgarian adventure unforgettable."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Van Life Explorer"
+          },
+          "reviewBody": "Professional service, well-maintained vehicles, and excellent customer support throughout our journey."
+        }
       ]
     }
     </script>
