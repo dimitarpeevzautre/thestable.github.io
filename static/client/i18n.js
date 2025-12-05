@@ -1,7 +1,7 @@
-$(function() {
+$(function () {
 	// Get saved language preference or detect from browser
 	const savedLanguage = localStorage.getItem('preferred-language');
-	
+
 	// use plugins and options as needed, for options, detail see
 	// https://www.i18next.com
 	i18next
@@ -22,12 +22,14 @@ $(function() {
 							booknow: 'Book Now',
 							about: 'About Us',
 							pricing: 'Pricing',
+							giftcard: 'Gift Card',
 							contact: 'Contact Us'
 						},
 						landing: {
 							title: 'the Stable',
 							subtitle: 'Campervans for rent',
-							booknow: 'Book now'
+							booknow: 'Book now',
+							giftcard: 'Buy Gift Card'
 						},
 						about: {
 							title: 'About our campers',
@@ -153,11 +155,13 @@ $(function() {
 							booknow: 'Резервирай сега',
 							about: 'За нас',
 							pricing: 'Цени',
+							giftcard: 'Ваучер ПОДАРЪК',
 							contact: 'Контакт'
 						},
 						landing: {
 							subtitle: 'Кемпери под наем',
-							booknow: 'Резервирай сега'
+							booknow: 'Резервирай сега',
+							giftcard: 'Купи ваучер'
 						},
 						about: {
 							title: 'За нашите кемпери',
@@ -283,7 +287,7 @@ $(function() {
 			// start localizing, details:
 			// https://github.com/i18next/jquery-i18next#usage-of-selector-function
 			$('body').localize();
-			
+
 			// Initialize language selector after i18next is loaded
 			initLanguageSelector();
 		});
@@ -291,35 +295,35 @@ $(function() {
 
 // Language selector implementation
 function initLanguageSelector() {
-    // Get current language or default to 'en'
-    const currentLang = i18next.language || 'en';
-    
-    // Set the active state based on stored language
-    $('.language-selector .lang-btn').removeClass('active');
-    $(`.language-selector .lang-btn[data-lang="${currentLang}"]`).addClass('active');
-    
-    // Handle language button clicks
-    $('.language-selector .lang-btn').on('click', function() {
-        const lang = $(this).data('lang');
-        
-        // Store the selected language
-        localStorage.setItem('preferred-language', lang);
-        
-        // Update UI
-        $('.language-selector .lang-btn').removeClass('active');
-        $(this).addClass('active');
-        
-        // Change language and update all translations
-        i18next.changeLanguage(lang, () => {
-            $('body').localize();
-        });
-        
-        // Track language change
-        if (typeof gtag === 'function') {
-            gtag('event', 'language_change', {
-                'event_category': 'localization',
-                'event_label': lang
-            });
-        }
-    });
+	// Get current language or default to 'en'
+	const currentLang = i18next.language || 'en';
+
+	// Set the active state based on stored language
+	$('.language-selector .lang-btn').removeClass('active');
+	$(`.language-selector .lang-btn[data-lang="${currentLang}"]`).addClass('active');
+
+	// Handle language button clicks
+	$('.language-selector .lang-btn').on('click', function () {
+		const lang = $(this).data('lang');
+
+		// Store the selected language
+		localStorage.setItem('preferred-language', lang);
+
+		// Update UI
+		$('.language-selector .lang-btn').removeClass('active');
+		$(this).addClass('active');
+
+		// Change language and update all translations
+		i18next.changeLanguage(lang, () => {
+			$('body').localize();
+		});
+
+		// Track language change
+		if (typeof gtag === 'function') {
+			gtag('event', 'language_change', {
+				'event_category': 'localization',
+				'event_label': lang
+			});
+		}
+	});
 }

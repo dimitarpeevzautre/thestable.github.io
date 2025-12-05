@@ -291,7 +291,8 @@ main {
   height: 100%;
   background-color: rgba(56, 56, 56, 0.5);
 }
-.landing-banner .image-wrapper img, .landing-banner .image-wrapper video {
+.landing-banner .image-wrapper img,
+.landing-banner .image-wrapper video {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -340,6 +341,18 @@ main {
   padding: 10px 30px;
   font-size: 20px;
 }
+.landing-banner .landing-text-wrapper .landing-gift-card {
+  margin-left: 20px;
+  padding: 10px 30px;
+  font-size: 20px;
+  border-color: #CBF3F0;
+  background-color: #CBF3F0;
+  color: #1F1A17;
+}
+.landing-banner .landing-text-wrapper .landing-gift-card:active {
+  border-top: 5px solid #2EC4B6;
+  border-right: 5px solid #2EC4B6;
+}
 @media (max-width: 900px) {
   .landing-banner .landing-text-wrapper p {
     font-size: 2vw;
@@ -351,6 +364,11 @@ main {
   .landing-banner .landing-text-wrapper .landing-book-now {
     padding: 10px 25px;
     font-size: 16px;
+  }
+  .landing-banner .landing-text-wrapper .landing-gift-card {
+    padding: 10px 25px;
+    font-size: 16px;
+    margin-left: 10px;
   }
 }
 
